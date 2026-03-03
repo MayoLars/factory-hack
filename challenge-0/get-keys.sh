@@ -429,7 +429,7 @@ echo "AZURE_AI_PROJECT_ENDPOINT=\"$aiFoundryProjectEndpoint\"" >> "$ENV_OUT"
 echo "AZURE_AI_PROJECT_RESOURCE_ID=\"$azureAIProjectResourceId\"" >> "$ENV_OUT"
 echo "AZURE_AI_CONNECTION_ID=\"$azureAIConnectionId\"" >> "$ENV_OUT"
 echo "AZURE_AI_MODEL_DEPLOYMENT_NAME=\"gpt-4.1\"" >> "$ENV_OUT"
-echo "EMBEDDING_MODEL_DEPLOYMENT_NAME=\"text-embedding-ada-002\"" >> "$ENV_OUT"
+echo "EMBEDDING_MODEL_DEPLOYMENT_NAME=\"text-embedding-3-large\"" >> "$ENV_OUT"
 # Azure Cosmos DB
 echo "COSMOS_NAME=\"$cosmosDbAccountName\"" >> "$ENV_OUT"
 echo "COSMOS_DATABASE_NAME=\"FactoryOpsDB\"" >> "$ENV_OUT"
