@@ -83,9 +83,15 @@ Set the following environment variables (for example via a `.env` file in `chall
 
 - `AZURE_AI_PROJECT_ENDPOINT` – your Foundry project endpoint
 
-### Task 2: Start Aspire
+### Task 2: Install & Start Aspire
 
-From the repo root:
+Install Aspire with bash:
+
+```bash
+curl -sSL https://aspire.dev/install.sh -o aspire-install.sh
+```
+
+Then start from the repo root:
 
 ```bash
 cd challenge-4/agent-workflow
