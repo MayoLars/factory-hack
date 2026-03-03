@@ -356,3 +356,186 @@ The Challenge 4 dotnet workflow looks up agents by name without version suffix (
 4. **Add retry logic for APIM cold starts** — a simple exponential backoff wrapper around the first MCP call would eliminate the need to run agents twice.
 
 5. **Use `ReferenceExpression` everywhere in apphost.cs** — the lambda-based `WithEnvironment` pattern doesn't work for Aspire endpoint references. `ReferenceExpression.Create($"{endpoint}/path")` is the correct pattern throughout.
+
+---
+
+## 17. Raw Data: End-to-End Workflow Run (Challenge 4)
+
+Observed from actual run against machine-001 (`curing_temperature_excessive`).
+
+### Workflow pipeline assembled:
+```
+AnomalyClassificationAgent → FaultDiagnosisAgent → RepairPlannerAgent → MaintenanceSchedulerAgent → PartsOrderingAgent
+```
+
+### Timing (from dotnet workflow stdout):
+```
+13:17:49  Starting analysis for machine machine-001
+13:17:55  Retrieved Agent Service agent: AnomalyClassificationAgent
+13:17:56  Retrieved Agent Service agent: FaultDiagnosisAgent
+13:17:57  CosmosDbService created for RepairPlannerAgent tools
+13:17:57  Created local agent: RepairPlannerAgent
+13:17:57  Retrieved A2A agent: MaintenanceSchedulerAgent
+13:17:57  Retrieved A2A agent: PartsOrderingAgent
+13:17:57  Workflow built with 5 agents
+13:18:09  Agent AnomalyClassificationAgent completed with 0 tool calls     (+12s)
+13:18:16  Agent FaultDiagnosisAgent completed with 0 tool calls             (+7s)
+13:18:23  Created work order WO-20260303-131822 (id=wo-2026-cdf6318a)
+13:18:26  Agent RepairPlannerAgent completed with 3 tool calls              (+10s)
+13:18:38  Agent MaintenanceSchedulerAgent completed with 0 tool calls       (+12s)
+13:18:39  Agent PartsOrderingAgent completed with 0 tool calls              (+1s)
+13:18:39  POST /api/analyze_machine → 200  (total: ~50.7 seconds)
+```
+
+Total end-to-end: **50.7 seconds** for a full 5-agent pipeline run.
+
+RepairPlannerAgent made exactly **3 tool calls**: `GetAvailableTechnicians`, `GetAvailableParts`, `CreateWorkOrder`.
+
+### Work order created by Challenge 4 RepairPlannerAgent:
+```
+ID: wo-2026-cdf6318a
+Number: WO-20260303-131822
+Machine: machine-001
+Fault: curing_temperature_excessive
+Status: scheduled
+```
+
+### A2A agent card URLs (actual endpoints observed):
+```
+GET https://localhost:8000/maintenance-scheduler/.well-known/agent-card.json → 200
+GET https://localhost:8000/parts-ordering/.well-known/agent-card.json → 200
+POST https://localhost:8000/maintenance-scheduler/ → 200
+POST https://localhost:8000/parts-ordering/ → 200
+```
+
+---
+
+## 18. Raw Data: Challenge 2 RepairPlanner Input (DiagnosedFault)
+
+Sample input used to test the standalone Challenge 2 agent:
+
+```json
+{
+  "machineId": "machine-001",
+  "faultType": "curing_temperature_excessive",
+  "rootCause": "Heating element malfunction",
+  "severity": "High",
+  "detectedAt": "2026-03-03T10:00:00.0000000Z",
+  "metadata": {
+    "ObservedTemperature": 179.2,
+    "Threshold": 178,
+    "machineType": "tire_curing_press"
+  }
+}
+```
+
+### Output: Work order created
+```
+WO-2026-001 (id=wo-2026-..., status=scheduled)
+```
+Required parts mapped for `curing_temperature_excessive`:
+- `TCP-HTR-4KW` (4kW Heater Cartridge)
+- `GEN-TS-K400` (K-Type Thermocouple 400°C)
+
+Required skills: `tire_curing_press`, `temperature_control`, `instrumentation`, `electrical_systems`, `plc_troubleshooting`, `mold_maintenance`
+
+---
+
+## 19. Raw Data: Challenge 3 Maintenance Scheduler Output (wo-2024-456)
+
+```
+Schedule ID: sched-1772537214.060585
+Machine: machine-004
+Scheduled Date: 2026-03-04 22:00
+Window: 22:00 - 06:00
+Production Impact: Low
+Risk Score: 82/100
+Failure Probability: 67.0%
+Recommended Action: URGENT
+```
+
+Reasoning summary: High-priority work order + load_cell_drift with emerging pattern + low MTBF (2 maintenance events in 3 months) + prior spindle bearing failure was costly. Optimal window: earliest available night shift (03/04) for low production impact.
+
+---
+
+## 20. Raw Data: Challenge 3 Parts Order (wo-2024-456)
+
+```json
+{
+  "orderId": "PO-a0ecc1a7",
+  "workOrderId": "wo-2024-456",
+  "supplier": "Industrial Parts Supply Co.",
+  "supplierId": "supplier-001",
+  "expectedDelivery": "2024-06-13",
+  "totalCost": 500.00,
+  "status": "Pending",
+  "items": [
+    { "partNumber": "TUM-LC-2KN",   "name": "Load Cell 2kN",          "qty": 1, "unitCost": 350.00 },
+    { "partNumber": "TUM-ENC-5000", "name": "Rotary Encoder 5000ppr", "qty": 1, "unitCost": 150.00 }
+  ]
+}
+```
+
+---
+
+## 21. Raw Data: Aspire Service Startup Sequence
+
+Observed startup order from DCP controller logs:
+
+```
+1. aspire-dashboard-otlp-grpc → Ready
+2. dotnetworkflow-http → Ready
+3. dotnetworkflow-https → Ready
+4. app-installer (uv sync) → runs
+5. app (uvicorn) → starts on port 8000 with SSL certs from /tmp/aspire-dcpXXX/
+6. frontend-installer (npm install) → runs
+7. frontend (npm run dev --port XXXXX) → starts on dynamic port
+```
+
+The uvicorn command Aspire injects (from resource logs):
+```
+uvicorn main:app
+  --host localhost --port 44561  # internal port
+  --reload
+  --host 0.0.0.0 --port 8000    # external port (overrides above)
+  --ssl-keyfile /tmp/aspire-dcpKlqKLO/app-tjygtryv/private/<cert-thumbprint>.key
+  --ssl-certfile /tmp/aspire-dcpKlqKLO/app-tjygtryv/private/<cert-thumbprint>.crt
+```
+
+Aspire generates per-run SSL certificates from the dev cert store and passes them to uvicorn automatically. The cert thumbprint matches the localhost dev cert (`0A9826A5286E72E1DCE50869102EBC72242143A2` in this run).
+
+---
+
+## 22. Raw Data: Challenge 1 Anomaly Classification Results
+
+From running `anomaly_classification_agent.py` against all 5 machines:
+
+```
+machine-001 (Tire Curing Press Alpha):
+  - curing_temperature: 179.2°C vs threshold 178°C → WARNING
+  - curing_duration: 45.2min vs max 45min → WARNING
+
+machine-002, machine-003, machine-004, machine-005: no violations above threshold
+```
+
+The agent detected 2 warning violations total on machine-001. The fault diagnosis agent then diagnosed these as `curing_temperature_excessive` with root cause `heating element malfunction / thermostat calibration drift`.
+
+---
+
+## 23. Raw Data: Cosmos DB Seed Verification Queries
+
+Confirmed working after `seed-data.sh`:
+
+```sql
+-- Machines (5 records)
+SELECT c.id, c.name, c.type FROM c WHERE c.type = 'tire_curing_press'
+→ Returns machine-001 (Tire Curing Press Alpha)
+
+-- Work orders (5 records, status=in_progress)
+SELECT c.id, c.machineId, c.faultType FROM c WHERE c.status = 'in_progress'
+→ wo-2024-456, wo-2024-432, wo-2024-468, wo-2024-445, wo-2024-419
+
+-- Parts inventory (16 records)
+SELECT c.partNumber, c.name, c.quantityInStock FROM c WHERE c.category = 'sensors'
+→ TUM-LC-2KN (Load Cell 2kN, qty=2), TUM-ENC-5000 (Rotary Encoder 5000ppr, qty=3), ...
+```
