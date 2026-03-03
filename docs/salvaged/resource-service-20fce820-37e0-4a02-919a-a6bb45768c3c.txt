@@ -1,0 +1,1 @@
+2026-03-03T14:16:43.352+0100	info	dcpctrl.ServiceReconciler	Service aspire-dashboard-otlp-grpc is now in state Ready	{"Service": "/aspire-dashboard-otlp-grpc", "Reconciliation": 35}

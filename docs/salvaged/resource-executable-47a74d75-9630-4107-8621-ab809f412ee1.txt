@@ -1,0 +1,1 @@
+2026-03-03T14:16:43.303+0100	info	dcpctrl.ExecutableReconciler	Starting process...	{"Executable": "/frontend-installer-tqkuxxgn", "Reconciliation": 5, "Cmd": "/home/nicklas/.nvm/versions/node/v24.13.0/bin/npm", "Args": ["install"]}

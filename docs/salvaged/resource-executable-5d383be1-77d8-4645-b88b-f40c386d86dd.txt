@@ -1,0 +1,1 @@
+2026-03-03T14:16:43.309+0100	info	dcpctrl.ExecutableReconciler	Starting process...	{"Executable": "/aspire-dashboard-ujhjcgpf", "Reconciliation": 7, "Cmd": "/usr/bin/dotnet", "Args": ["exec", "--runtimeconfig", "/tmp/aspireVY4MvV/runtimeconfig.json", "/home/nicklas/.nuget/packages/aspire.dashboard.sdk.linux-x64/13.1.0/tools/Aspire.Dashboard.dll"]}

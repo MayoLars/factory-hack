@@ -1,0 +1,31 @@
+{
+    "capabilities": {
+        "pushNotifications": false,
+        "streaming": true
+    },
+    "defaultInputModes": [
+        "text"
+    ],
+    "defaultOutputModes": [
+        "text"
+    ],
+    "description": "Parts ordering agent that analyzes inventory status and generates optimized parts orders from suppliers.",
+    "name": "PartsOrderingAgent",
+    "preferredTransport": "JSONRPC",
+    "protocolVersion": "0.3.0",
+    "skills": [
+        {
+            "description": "Generate optimized parts order for a work order",
+            "id": "order_parts",
+            "name": "Order Parts",
+            "tags": [
+                "parts",
+                "ordering",
+                "inventory",
+                "suppliers"
+            ]
+        }
+    ],
+    "url": "https://localhost:8000/parts-ordering/",
+    "version": "1.0.0"
+}

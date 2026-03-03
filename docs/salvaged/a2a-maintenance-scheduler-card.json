@@ -1,0 +1,30 @@
+{
+    "capabilities": {
+        "pushNotifications": false,
+        "streaming": true
+    },
+    "defaultInputModes": [
+        "text"
+    ],
+    "defaultOutputModes": [
+        "text"
+    ],
+    "description": "Predictive maintenance scheduling agent that analyzes work orders, historical maintenance data, and available windows to recommend optimal maintenance schedules.",
+    "name": "MaintenanceSchedulerAgent",
+    "preferredTransport": "JSONRPC",
+    "protocolVersion": "0.3.0",
+    "skills": [
+        {
+            "description": "Predict optimal maintenance schedule for a work order",
+            "id": "schedule_maintenance",
+            "name": "Schedule Maintenance",
+            "tags": [
+                "maintenance",
+                "scheduling",
+                "predictive"
+            ]
+        }
+    ],
+    "url": "https://localhost:8000/maintenance-scheduler/",
+    "version": "1.0.0"
+}

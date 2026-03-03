@@ -1,0 +1,12 @@
+1 2026-03-03T13:16:45.206Z 
+2 2026-03-03T13:16:45.206Z up to date, audited 174 packages in 2s
+3 2026-03-03T13:16:45.206Z 
+4 2026-03-03T13:16:45.206Z 44 packages are looking for funding
+5 2026-03-03T13:16:45.206Z   run `npm fund` for details
+6 2026-03-03T13:16:45.217Z 
+7 2026-03-03T13:16:45.217Z 3 vulnerabilities (1 moderate, 2 high)
+8 2026-03-03T13:16:45.217Z 
+9 2026-03-03T13:16:45.217Z To address all issues, run:
+10 2026-03-03T13:16:45.217Z   npm audit fix
+11 2026-03-03T13:16:45.217Z 
+12 2026-03-03T13:16:45.217Z Run `npm audit` for details.

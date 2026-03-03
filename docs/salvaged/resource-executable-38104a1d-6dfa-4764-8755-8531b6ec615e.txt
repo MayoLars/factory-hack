@@ -1,0 +1,1 @@
+2026-03-03T14:16:48.007+0100	info	dcpctrl.ExecutableReconciler	Starting process...	{"Executable": "/frontend-bmzzecjt", "Reconciliation": 35, "Cmd": "/home/nicklas/.nvm/versions/node/v24.13.0/bin/npm", "Args": ["run", "dev", "--", "--port", "35763"]}

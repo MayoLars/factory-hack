@@ -1,0 +1,1692 @@
+1 2026-03-03T13:16:44.188Z INFO:     Will watch for changes in these directories: ['/home/nicklas/factory-hack/challenge-4/agent-workflow/app']
+2 2026-03-03T13:16:44.189Z INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+3 2026-03-03T13:16:44.189Z INFO:     Started reloader process [17183] using WatchFiles
+4 2026-03-03T13:16:46.872Z INFO:main:A2A agents mounted successfully at /maintenance-scheduler and /parts-ordering
+5 2026-03-03T13:16:46.907Z INFO:     Started server process [17202]
+6 2026-03-03T13:16:46.907Z INFO:     Waiting for application startup.
+7 2026-03-03T13:16:47.009Z WARNING:opentelemetry.trace:Overriding of current TracerProvider is not allowed
+8 2026-03-03T13:16:47.011Z WARNING:opentelemetry._logs._internal:Overriding of current LoggerProvider is not allowed
+9 2026-03-03T13:16:47.012Z WARNING:opentelemetry.metrics._internal:Overriding of current MeterProvider is not allowed
+10 2026-03-03T13:16:47.012Z INFO:     Application startup complete.
+11 2026-03-03T13:16:47.137Z INFO:main:>>> Incoming request: GET /health
+12 2026-03-03T13:16:47.138Z INFO:main:<<< Response: GET /health - Status: 200
+13 2026-03-03T13:17:17.162Z INFO:main:>>> Incoming request: GET /health
+14 2026-03-03T13:17:17.163Z INFO:main:<<< Response: GET /health - Status: 200
+15 2026-03-03T13:17:47.175Z INFO:main:>>> Incoming request: GET /health
+16 2026-03-03T13:17:47.175Z INFO:main:<<< Response: GET /health - Status: 200
+17 2026-03-03T13:17:57.412Z INFO:main:>>> Incoming request: GET /maintenance-scheduler/.well-known/agent-card.json
+18 2026-03-03T13:17:57.413Z INFO:main:<<< Response: GET /maintenance-scheduler/.well-known/agent-card.json - Status: 200
+19 2026-03-03T13:17:57.529Z INFO:main:>>> Incoming request: GET /parts-ordering/.well-known/agent-card.json
+20 2026-03-03T13:17:57.530Z INFO:main:<<< Response: GET /parts-ordering/.well-known/agent-card.json - Status: 200
+21 2026-03-03T13:18:17.187Z INFO:main:>>> Incoming request: GET /health
+22 2026-03-03T13:18:17.187Z INFO:main:<<< Response: GET /health - Status: 200
+23 2026-03-03T13:18:26.875Z INFO:main:>>> Incoming request: POST /maintenance-scheduler/
+24 2026-03-03T13:18:27.155Z INFO:agents:MaintenanceSchedulerExecutor received message: context_id='f4b067d8-d442-4150-ae7e-1d67a3d05595' extensions=None kind='message' message_id='bcc738e47f5743b492d7474f19e3283c' metadata=None parts=[Part(root=TextPart(kind='text', metadata=None, text='Repair Plan\n\nWork Order ID: wo-2026-cdf6318a\n\n- Machine ID: unknown\n- Fault Type: curing_temperature_excessive\n- Priority: Medium\n- Assigned Technician: John Smith (tech-001)\n- Estimated Duration: 90 minutes\n\nRepair Tasks:\n1. Power down tire curing press and lock out electrical supply.\n2. Open access panels and inspect heating elements for signs of malfunction or damage.\n3. Remove and replace faulty heating element (TCP-HTR-4KW) as necessary.\n4. Inspect and recalibrate temperature sensor (GEN-TS-K400).\n5. Restore power and verify correct operation and temperature control.\n6. Confirm curing process parameters are within standard thresholds.\n7. Complete maintenance records and report any further irregularities.\n\nRequired Parts:\n- TCP-HTR-4KW: Heating element (5 in stock, Warehouse-A)\n- GEN-TS-K400: Temperature sensor (6 in stock, Warehouse-B)\n\nSafety Notes:\n- Ensure proper lockout/tag-out procedures before working on electrical components.\n- Use protective gloves and eyewear when handling heating elements.\n- Allow time for cooling before handling hot components.\n- Verify safety interlocks are functioning before restart.\n\nWork Order ID wo-2026-cdf6318a is now scheduled and can be tracked in the maintenance system.'))] reference_task_ids=None role=<Role.user: 'user'> task_id='85c6a5bc-29fb-4bcd-aa85-ab64d438f6ee'
+25 2026-03-03T13:18:27.155Z INFO:agents:Part: type=<class 'a2a.types.Part'>, root=kind='text' metadata=None text='Repair Plan\n\nWork Order ID: wo-2026-cdf6318a\n\n- Machine ID: unknown\n- Fault Type: curing_temperature_excessive\n- Priority: Medium\n- Assigned Technician: John Smith (tech-001)\n- Estimated Duration: 90 minutes\n\nRepair Tasks:\n1. Power down tire curing press and lock out electrical supply.\n2. Open access panels and inspect heating elements for signs of malfunction or damage.\n3. Remove and replace faulty heating element (TCP-HTR-4KW) as necessary.\n4. Inspect and recalibrate temperature sensor (GEN-TS-K400).\n5. Restore power and verify correct operation and temperature control.\n6. Confirm curing process parameters are within standard thresholds.\n7. Complete maintenance records and report any further irregularities.\n\nRequired Parts:\n- TCP-HTR-4KW: Heating element (5 in stock, Warehouse-A)\n- GEN-TS-K400: Temperature sensor (6 in stock, Warehouse-B)\n\nSafety Notes:\n- Ensure proper lockout/tag-out procedures before working on electrical components.\n- Use protective gloves and eyewear when handling heating elements.\n- Allow time for cooling before handling hot components.\n- Verify safety interlocks are functioning before restart.\n\nWork Order ID wo-2026-cdf6318a is now scheduled and can be tracked in the maintenance system.'
+26 2026-03-03T13:18:27.155Z INFO:agents:Extracted text from p.root.text: 'Repair Plan
+27 2026-03-03T13:18:27.155Z 
+28 2026-03-03T13:18:27.155Z Work Order ID: wo-2026-cdf6318a
+29 2026-03-03T13:18:27.155Z 
+30 2026-03-03T13:18:27.155Z - Machine ID: unknown
+31 2026-03-03T13:18:27.155Z - Fault Type: curing_temperature_excessive
+32 2026-03-03T13:18:27.155Z - Priority: Medium
+33 2026-03-03T13:18:27.155Z - Assigned Technician: John Smith (tech-001)
+34 2026-03-03T13:18:27.155Z - Estimated Duration: 90 minutes
+35 2026-03-03T13:18:27.155Z 
+36 2026-03-03T13:18:27.155Z Repair Tasks:
+37 2026-03-03T13:18:27.155Z 1. Power down tire curing press and lock out electrical supply.
+38 2026-03-03T13:18:27.155Z 2. Open access panels and inspect heating elements for signs of malfunction or damage.
+39 2026-03-03T13:18:27.155Z 3. Remove and replace faulty heating element (TCP-HTR-4KW) as necessary.
+40 2026-03-03T13:18:27.155Z 4. Inspect and recalibrate temperature sensor (GEN-TS-K400).
+41 2026-03-03T13:18:27.155Z 5. Restore power and verify correct operation and temperature control.
+42 2026-03-03T13:18:27.155Z 6. Confirm curing process parameters are within standard thresholds.
+43 2026-03-03T13:18:27.155Z 7. Complete maintenance records and report any further irregularities.
+44 2026-03-03T13:18:27.155Z 
+45 2026-03-03T13:18:27.155Z Required Parts:
+46 2026-03-03T13:18:27.155Z - TCP-HTR-4KW: Heating element (5 in stock, Warehouse-A)
+47 2026-03-03T13:18:27.155Z - GEN-TS-K400: Temperature sensor (6 in stock, Warehouse-B)
+48 2026-03-03T13:18:27.155Z 
+49 2026-03-03T13:18:27.155Z Safety Notes:
+50 2026-03-03T13:18:27.155Z - Ensure proper lockout/tag-out procedures before working on electrical components.
+51 2026-03-03T13:18:27.155Z - Use protective gloves and eyewear when handling heating elements.
+52 2026-03-03T13:18:27.155Z - Allow time for cooling before handling hot components.
+53 2026-03-03T13:18:27.155Z - Verify safety interlocks are functioning before restart.
+54 2026-03-03T13:18:27.155Z 
+55 2026-03-03T13:18:27.155Z Work Order ID wo-2026-cdf6318a is now scheduled and can be tracked in the maintenance system.'
+56 2026-03-03T13:18:27.157Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny.documents.azure.com:443/'
+57 2026-03-03T13:18:27.157Z Request method: 'GET'
+58 2026-03-03T13:18:27.157Z Request headers:
+59 2026-03-03T13:18:27.157Z     'Cache-Control': 'no-cache'
+60 2026-03-03T13:18:27.157Z     'x-ms-version': '2020-07-15'
+61 2026-03-03T13:18:27.157Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+62 2026-03-03T13:18:27.157Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+63 2026-03-03T13:18:27.157Z     'x-ms-activity-id': '548b74d5-6e23-4c44-b2c5-a01acb9e2702'
+64 2026-03-03T13:18:27.157Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+65 2026-03-03T13:18:27.157Z     'authorization': 'REDACTED'
+66 2026-03-03T13:18:27.157Z     'Accept': 'application/json'
+67 2026-03-03T13:18:27.157Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+68 2026-03-03T13:18:27.157Z     'x-ms-thinclient-proxy-resource-type': 'databaseaccount'
+69 2026-03-03T13:18:27.157Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+70 2026-03-03T13:18:27.157Z     'Content-Length': '0'
+71 2026-03-03T13:18:27.157Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+72 2026-03-03T13:18:27.157Z No body was attached to the request
+73 2026-03-03T13:18:27.508Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+74 2026-03-03T13:18:27.508Z Response headers:
+75 2026-03-03T13:18:27.508Z     'Cache-Control': 'no-store, no-cache'
+76 2026-03-03T13:18:27.508Z     'Pragma': 'no-cache'
+77 2026-03-03T13:18:27.508Z     'Transfer-Encoding': 'REDACTED'
+78 2026-03-03T13:18:27.508Z     'Content-Type': 'application/json'
+79 2026-03-03T13:18:27.508Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny.documents.azure.com/'
+80 2026-03-03T13:18:27.508Z     'Server': 'Microsoft-HTTPAPI/2.0'
+81 2026-03-03T13:18:27.508Z     'x-ms-max-media-storage-usage-mb': '2048'
+82 2026-03-03T13:18:27.508Z     'x-ms-media-storage-usage-mb': '0'
+83 2026-03-03T13:18:27.508Z     'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+84 2026-03-03T13:18:27.508Z     'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+85 2026-03-03T13:18:27.508Z     'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+86 2026-03-03T13:18:27.508Z     'Strict-Transport-Security': 'max-age=31536000'
+87 2026-03-03T13:18:27.508Z     'x-ms-gatewayversion': 'version=2.14.0'
+88 2026-03-03T13:18:27.508Z     'Date': 'Tue, 03 Mar 2026 13:18:26 GMT'
+89 2026-03-03T13:18:27.512Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/'
+90 2026-03-03T13:18:27.512Z Request method: 'GET'
+91 2026-03-03T13:18:27.512Z Request headers:
+92 2026-03-03T13:18:27.512Z     'Cache-Control': 'no-cache'
+93 2026-03-03T13:18:27.512Z     'x-ms-version': '2020-07-15'
+94 2026-03-03T13:18:27.512Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+95 2026-03-03T13:18:27.512Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+96 2026-03-03T13:18:27.512Z     'x-ms-activity-id': '9de4d4f4-129f-4a23-b8f5-0769e071267e'
+97 2026-03-03T13:18:27.512Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+98 2026-03-03T13:18:27.512Z     'authorization': 'REDACTED'
+99 2026-03-03T13:18:27.512Z     'Accept': 'application/json'
+100 2026-03-03T13:18:27.512Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+101 2026-03-03T13:18:27.512Z     'x-ms-thinclient-proxy-resource-type': 'databaseaccount'
+102 2026-03-03T13:18:27.512Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+103 2026-03-03T13:18:27.512Z     'Content-Length': '0'
+104 2026-03-03T13:18:27.512Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+105 2026-03-03T13:18:27.512Z No body was attached to the request
+106 2026-03-03T13:18:27.517Z INFO:agents:Looking up work order: 'wo-2026-cdf6318a'
+107 2026-03-03T13:18:27.519Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/'
+108 2026-03-03T13:18:27.519Z Request method: 'GET'
+109 2026-03-03T13:18:27.519Z Request headers:
+110 2026-03-03T13:18:27.519Z     'Cache-Control': 'no-cache'
+111 2026-03-03T13:18:27.519Z     'x-ms-version': '2020-07-15'
+112 2026-03-03T13:18:27.519Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+113 2026-03-03T13:18:27.519Z     'x-ms-consistency-level': 'Session'
+114 2026-03-03T13:18:27.519Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+115 2026-03-03T13:18:27.519Z     'x-ms-activity-id': '0a92fab6-363c-47fa-8c8d-4c1cdb040d33'
+116 2026-03-03T13:18:27.519Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+117 2026-03-03T13:18:27.519Z     'authorization': 'REDACTED'
+118 2026-03-03T13:18:27.519Z     'Accept': 'application/json'
+119 2026-03-03T13:18:27.519Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+120 2026-03-03T13:18:27.519Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+121 2026-03-03T13:18:27.519Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+122 2026-03-03T13:18:27.519Z     'Content-Length': '0'
+123 2026-03-03T13:18:27.519Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+124 2026-03-03T13:18:27.519Z No body was attached to the request
+125 2026-03-03T13:18:27.765Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+126 2026-03-03T13:18:27.765Z Response headers:
+127 2026-03-03T13:18:27.765Z     'Cache-Control': 'no-store, no-cache'
+128 2026-03-03T13:18:27.765Z     'Pragma': 'no-cache'
+129 2026-03-03T13:18:27.765Z     'Transfer-Encoding': 'REDACTED'
+130 2026-03-03T13:18:27.765Z     'Content-Type': 'application/json'
+131 2026-03-03T13:18:27.765Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/'
+132 2026-03-03T13:18:27.765Z     'Server': 'Microsoft-HTTPAPI/2.0'
+133 2026-03-03T13:18:27.765Z     'x-ms-max-media-storage-usage-mb': '2048'
+134 2026-03-03T13:18:27.765Z     'x-ms-media-storage-usage-mb': '0'
+135 2026-03-03T13:18:27.765Z     'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+136 2026-03-03T13:18:27.765Z     'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+137 2026-03-03T13:18:27.765Z     'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+138 2026-03-03T13:18:27.765Z     'Strict-Transport-Security': 'max-age=31536000'
+139 2026-03-03T13:18:27.765Z     'x-ms-gatewayversion': 'version=2.14.0'
+140 2026-03-03T13:18:27.765Z     'Date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+141 2026-03-03T13:18:27.836Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+142 2026-03-03T13:18:27.836Z Response headers:
+143 2026-03-03T13:18:27.836Z     'Cache-Control': 'no-store, no-cache'
+144 2026-03-03T13:18:27.836Z     'Pragma': 'no-cache'
+145 2026-03-03T13:18:27.836Z     'Transfer-Encoding': 'REDACTED'
+146 2026-03-03T13:18:27.836Z     'Content-Type': 'application/json'
+147 2026-03-03T13:18:27.836Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/WorkOrders/'
+148 2026-03-03T13:18:27.836Z     'Server': 'Microsoft-HTTPAPI/2.0'
+149 2026-03-03T13:18:27.836Z     'Strict-Transport-Security': 'max-age=31536000'
+150 2026-03-03T13:18:27.836Z     'x-ms-activity-id': '0a92fab6-363c-47fa-8c8d-4c1cdb040d33'
+151 2026-03-03T13:18:27.836Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:08.415 GMT'
+152 2026-03-03T13:18:27.836Z     'etag': '"00008005-0000-1500-0000-69a5c5300000"'
+153 2026-03-03T13:18:27.836Z     'x-ms-schemaversion': '1.21'
+154 2026-03-03T13:18:27.836Z     'collection-partition-index': 'REDACTED'
+155 2026-03-03T13:18:27.836Z     'collection-service-index': 'REDACTED'
+156 2026-03-03T13:18:27.836Z     'lsn': '63'
+157 2026-03-03T13:18:27.836Z     'x-ms-request-charge': '2'
+158 2026-03-03T13:18:27.836Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+159 2026-03-03T13:18:27.836Z     'x-ms-content-path': 'NFtxAA=='
+160 2026-03-03T13:18:27.836Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+161 2026-03-03T13:18:27.836Z     'x-ms-xp-role': '2'
+162 2026-03-03T13:18:27.836Z     'x-ms-global-Committed-lsn': '63'
+163 2026-03-03T13:18:27.836Z     'x-ms-number-of-read-regions': '0'
+164 2026-03-03T13:18:27.836Z     'x-ms-item-lsn': '1'
+165 2026-03-03T13:18:27.836Z     'x-ms-transport-request-id': '1'
+166 2026-03-03T13:18:27.836Z     'x-ms-cosmos-llsn': '63'
+167 2026-03-03T13:18:27.836Z     'x-ms-cosmos-item-llsn': '1'
+168 2026-03-03T13:18:27.836Z     'x-ms-session-token': '0:-1#63'
+169 2026-03-03T13:18:27.836Z     'x-ms-request-duration-ms': '20.154'
+170 2026-03-03T13:18:27.836Z     'x-ms-serviceversion': 'version=2.14.0.0'
+171 2026-03-03T13:18:27.836Z     'x-ms-cosmos-physical-partition-id': '0'
+172 2026-03-03T13:18:27.836Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+173 2026-03-03T13:18:27.836Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+174 2026-03-03T13:18:27.836Z     'x-ms-gatewayversion': 'version=2.14.0'
+175 2026-03-03T13:18:27.836Z     'Date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+176 2026-03-03T13:18:27.837Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/docs/'
+177 2026-03-03T13:18:27.837Z Request method: 'POST'
+178 2026-03-03T13:18:27.837Z Request headers:
+179 2026-03-03T13:18:27.837Z     'Cache-Control': 'no-cache'
+180 2026-03-03T13:18:27.837Z     'x-ms-version': '2020-07-15'
+181 2026-03-03T13:18:27.837Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+182 2026-03-03T13:18:27.837Z     'x-ms-consistency-level': 'Session'
+183 2026-03-03T13:18:27.837Z     'Content-Type': 'application/query+json'
+184 2026-03-03T13:18:27.837Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+185 2026-03-03T13:18:27.837Z     'x-ms-activity-id': '82860bd9-89c8-4a4e-9172-ea782c0138b6'
+186 2026-03-03T13:18:27.837Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+187 2026-03-03T13:18:27.837Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+188 2026-03-03T13:18:27.837Z     'authorization': 'REDACTED'
+189 2026-03-03T13:18:27.837Z     'Accept': 'application/json'
+190 2026-03-03T13:18:27.837Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+191 2026-03-03T13:18:27.837Z     'x-ms-cosmos-correlated-activityid': '5e733121-5155-4af2-8536-7ad7b7bb1ced'
+192 2026-03-03T13:18:27.837Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAMI69M4='
+193 2026-03-03T13:18:27.837Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+194 2026-03-03T13:18:27.837Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+195 2026-03-03T13:18:27.837Z     'x-ms-documentdb-isquery': 'true'
+196 2026-03-03T13:18:27.837Z     'Content-Length': '101'
+197 2026-03-03T13:18:27.837Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+198 2026-03-03T13:18:27.837Z A body is sent with the request
+199 2026-03-03T13:18:27.998Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+200 2026-03-03T13:18:27.998Z Response headers:
+201 2026-03-03T13:18:27.998Z     'Cache-Control': 'no-store, no-cache'
+202 2026-03-03T13:18:27.998Z     'Pragma': 'no-cache'
+203 2026-03-03T13:18:27.998Z     'Transfer-Encoding': 'REDACTED'
+204 2026-03-03T13:18:27.998Z     'Content-Type': 'application/json'
+205 2026-03-03T13:18:27.998Z     'Server': 'Microsoft-HTTPAPI/2.0'
+206 2026-03-03T13:18:27.998Z     'Strict-Transport-Security': 'max-age=31536000'
+207 2026-03-03T13:18:27.998Z     'x-ms-activity-id': '82860bd9-89c8-4a4e-9172-ea782c0138b6'
+208 2026-03-03T13:18:27.998Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:02.890 GMT'
+209 2026-03-03T13:18:27.998Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+210 2026-03-03T13:18:27.998Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=102;documentsCount=12;collectionSize=105;'
+211 2026-03-03T13:18:27.998Z     'x-ms-schemaversion': '1.21'
+212 2026-03-03T13:18:27.998Z     'lsn': '63'
+213 2026-03-03T13:18:27.998Z     'x-ms-item-count': '1'
+214 2026-03-03T13:18:27.998Z     'x-ms-request-charge': '2.83'
+215 2026-03-03T13:18:27.998Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/WorkOrders'
+216 2026-03-03T13:18:27.998Z     'x-ms-content-path': 'NFtxAMI69M4='
+217 2026-03-03T13:18:27.998Z     'x-ms-quorum-acked-lsn': '63'
+218 2026-03-03T13:18:27.998Z     'x-ms-current-write-quorum': '3'
+219 2026-03-03T13:18:27.998Z     'x-ms-current-replica-set-size': '4'
+220 2026-03-03T13:18:27.998Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+221 2026-03-03T13:18:27.998Z     'x-ms-xp-role': '1'
+222 2026-03-03T13:18:27.998Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":false}'
+223 2026-03-03T13:18:27.998Z     'x-ms-global-Committed-lsn': '63'
+224 2026-03-03T13:18:27.998Z     'x-ms-number-of-read-regions': '0'
+225 2026-03-03T13:18:27.998Z     'x-ms-transport-request-id': '1'
+226 2026-03-03T13:18:27.998Z     'x-ms-cosmos-llsn': '63'
+227 2026-03-03T13:18:27.998Z     'x-ms-cosmos-quorum-acked-llsn': '63'
+228 2026-03-03T13:18:27.998Z     'x-ms-session-token': '0:-1#63'
+229 2026-03-03T13:18:27.998Z     'x-ms-request-duration-ms': '20.39'
+230 2026-03-03T13:18:27.998Z     'x-ms-serviceversion': 'version=2.14.0.0'
+231 2026-03-03T13:18:27.998Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+232 2026-03-03T13:18:27.998Z     'x-ms-cosmos-physical-partition-id': '0'
+233 2026-03-03T13:18:27.998Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+234 2026-03-03T13:18:27.998Z     'x-ms-gatewayversion': 'version=2.14.0'
+235 2026-03-03T13:18:27.998Z     'Date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+236 2026-03-03T13:18:27.998Z INFO:agents:Found work order: wo-2026-cdf6318a for machine: unknown
+237 2026-03-03T13:18:27.999Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/MaintenanceHistory/'
+238 2026-03-03T13:18:27.999Z Request method: 'GET'
+239 2026-03-03T13:18:27.999Z Request headers:
+240 2026-03-03T13:18:27.999Z     'Cache-Control': 'no-cache'
+241 2026-03-03T13:18:27.999Z     'x-ms-version': '2020-07-15'
+242 2026-03-03T13:18:27.999Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+243 2026-03-03T13:18:27.999Z     'x-ms-consistency-level': 'Session'
+244 2026-03-03T13:18:27.999Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+245 2026-03-03T13:18:27.999Z     'x-ms-activity-id': '7038f88f-db7b-4cd6-9b1f-80d967ce2676'
+246 2026-03-03T13:18:27.999Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:27 GMT'
+247 2026-03-03T13:18:27.999Z     'authorization': 'REDACTED'
+248 2026-03-03T13:18:27.999Z     'Accept': 'application/json'
+249 2026-03-03T13:18:27.999Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+250 2026-03-03T13:18:27.999Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+251 2026-03-03T13:18:27.999Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+252 2026-03-03T13:18:27.999Z     'Content-Length': '0'
+253 2026-03-03T13:18:27.999Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+254 2026-03-03T13:18:27.999Z No body was attached to the request
+255 2026-03-03T13:18:28.113Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+256 2026-03-03T13:18:28.113Z Response headers:
+257 2026-03-03T13:18:28.113Z     'Cache-Control': 'no-store, no-cache'
+258 2026-03-03T13:18:28.113Z     'Pragma': 'no-cache'
+259 2026-03-03T13:18:28.113Z     'Transfer-Encoding': 'REDACTED'
+260 2026-03-03T13:18:28.113Z     'Content-Type': 'application/json'
+261 2026-03-03T13:18:28.113Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/MaintenanceHistory/'
+262 2026-03-03T13:18:28.113Z     'Server': 'Microsoft-HTTPAPI/2.0'
+263 2026-03-03T13:18:28.113Z     'Strict-Transport-Security': 'max-age=31536000'
+264 2026-03-03T13:18:28.113Z     'x-ms-activity-id': '7038f88f-db7b-4cd6-9b1f-80d967ce2676'
+265 2026-03-03T13:18:28.113Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 15:30:13.837 GMT'
+266 2026-03-03T13:18:28.113Z     'etag': '"00008505-0000-1500-0000-69a5c5310000"'
+267 2026-03-03T13:18:28.113Z     'x-ms-schemaversion': '1.21'
+268 2026-03-03T13:18:28.113Z     'collection-partition-index': 'REDACTED'
+269 2026-03-03T13:18:28.113Z     'collection-service-index': 'REDACTED'
+270 2026-03-03T13:18:28.113Z     'lsn': '13'
+271 2026-03-03T13:18:28.113Z     'x-ms-request-charge': '2'
+272 2026-03-03T13:18:28.113Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+273 2026-03-03T13:18:28.113Z     'x-ms-content-path': 'NFtxAA=='
+274 2026-03-03T13:18:28.113Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+275 2026-03-03T13:18:28.113Z     'x-ms-xp-role': '1'
+276 2026-03-03T13:18:28.113Z     'x-ms-global-Committed-lsn': '13'
+277 2026-03-03T13:18:28.113Z     'x-ms-number-of-read-regions': '0'
+278 2026-03-03T13:18:28.113Z     'x-ms-item-lsn': '1'
+279 2026-03-03T13:18:28.113Z     'x-ms-transport-request-id': '1'
+280 2026-03-03T13:18:28.113Z     'x-ms-cosmos-llsn': '13'
+281 2026-03-03T13:18:28.113Z     'x-ms-cosmos-item-llsn': '1'
+282 2026-03-03T13:18:28.113Z     'x-ms-session-token': '0:-1#13'
+283 2026-03-03T13:18:28.113Z     'x-ms-request-duration-ms': '21.072'
+284 2026-03-03T13:18:28.113Z     'x-ms-serviceversion': 'version=2.14.0.0'
+285 2026-03-03T13:18:28.113Z     'x-ms-cosmos-physical-partition-id': '0'
+286 2026-03-03T13:18:28.113Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+287 2026-03-03T13:18:28.113Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+288 2026-03-03T13:18:28.113Z     'x-ms-gatewayversion': 'version=2.14.0'
+289 2026-03-03T13:18:28.113Z     'Date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+290 2026-03-03T13:18:28.115Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/MaintenanceHistory/docs/'
+291 2026-03-03T13:18:28.115Z Request method: 'POST'
+292 2026-03-03T13:18:28.115Z Request headers:
+293 2026-03-03T13:18:28.115Z     'Cache-Control': 'no-cache'
+294 2026-03-03T13:18:28.115Z     'x-ms-version': '2020-07-15'
+295 2026-03-03T13:18:28.115Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+296 2026-03-03T13:18:28.115Z     'x-ms-consistency-level': 'Session'
+297 2026-03-03T13:18:28.115Z     'Content-Type': 'application/query+json'
+298 2026-03-03T13:18:28.115Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+299 2026-03-03T13:18:28.115Z     'x-ms-activity-id': '8d9e5304-71f4-42b4-b610-379dc8a90ef1'
+300 2026-03-03T13:18:28.115Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+301 2026-03-03T13:18:28.115Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+302 2026-03-03T13:18:28.115Z     'authorization': 'REDACTED'
+303 2026-03-03T13:18:28.115Z     'Accept': 'application/json'
+304 2026-03-03T13:18:28.115Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+305 2026-03-03T13:18:28.115Z     'x-ms-cosmos-correlated-activityid': '7954f137-7ea9-4033-903b-fd1f9440dbbd'
+306 2026-03-03T13:18:28.115Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAKR8+HI='
+307 2026-03-03T13:18:28.115Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+308 2026-03-03T13:18:28.115Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+309 2026-03-03T13:18:28.115Z     'x-ms-documentdb-isquery': 'true'
+310 2026-03-03T13:18:28.115Z     'Content-Length': '144'
+311 2026-03-03T13:18:28.115Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+312 2026-03-03T13:18:28.115Z A body is sent with the request
+313 2026-03-03T13:18:28.181Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+314 2026-03-03T13:18:28.181Z Response headers:
+315 2026-03-03T13:18:28.181Z     'Cache-Control': 'no-store, no-cache'
+316 2026-03-03T13:18:28.181Z     'Pragma': 'no-cache'
+317 2026-03-03T13:18:28.181Z     'Transfer-Encoding': 'REDACTED'
+318 2026-03-03T13:18:28.181Z     'Content-Type': 'application/json'
+319 2026-03-03T13:18:28.181Z     'Server': 'Microsoft-HTTPAPI/2.0'
+320 2026-03-03T13:18:28.181Z     'Strict-Transport-Security': 'max-age=31536000'
+321 2026-03-03T13:18:28.181Z     'x-ms-activity-id': '8d9e5304-71f4-42b4-b610-379dc8a90ef1'
+322 2026-03-03T13:18:28.181Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 15:30:13.837 GMT'
+323 2026-03-03T13:18:28.181Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+324 2026-03-03T13:18:28.181Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=0;documentsCount=12;collectionSize=0;'
+325 2026-03-03T13:18:28.181Z     'x-ms-schemaversion': '1.21'
+326 2026-03-03T13:18:28.181Z     'lsn': '13'
+327 2026-03-03T13:18:28.181Z     'x-ms-item-count': '0'
+328 2026-03-03T13:18:28.181Z     'x-ms-request-charge': '2.8'
+329 2026-03-03T13:18:28.181Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/MaintenanceHistory'
+330 2026-03-03T13:18:28.181Z     'x-ms-content-path': 'NFtxAKR8+HI='
+331 2026-03-03T13:18:28.181Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+332 2026-03-03T13:18:28.181Z     'x-ms-xp-role': '1'
+333 2026-03-03T13:18:28.181Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":true}'
+334 2026-03-03T13:18:28.181Z     'x-ms-global-Committed-lsn': '13'
+335 2026-03-03T13:18:28.181Z     'x-ms-number-of-read-regions': '0'
+336 2026-03-03T13:18:28.181Z     'x-ms-transport-request-id': '2'
+337 2026-03-03T13:18:28.181Z     'x-ms-cosmos-llsn': '13'
+338 2026-03-03T13:18:28.181Z     'x-ms-session-token': '0:-1#13'
+339 2026-03-03T13:18:28.181Z     'x-ms-request-duration-ms': '21.172'
+340 2026-03-03T13:18:28.181Z     'x-ms-serviceversion': 'version=2.14.0.0'
+341 2026-03-03T13:18:28.181Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+342 2026-03-03T13:18:28.181Z     'x-ms-cosmos-physical-partition-id': '0'
+343 2026-03-03T13:18:28.181Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+344 2026-03-03T13:18:28.181Z     'x-ms-gatewayversion': 'version=2.14.0'
+345 2026-03-03T13:18:28.181Z     'Date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+346 2026-03-03T13:18:28.182Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/MaintenanceWindows/'
+347 2026-03-03T13:18:28.182Z Request method: 'GET'
+348 2026-03-03T13:18:28.182Z Request headers:
+349 2026-03-03T13:18:28.182Z     'Cache-Control': 'no-cache'
+350 2026-03-03T13:18:28.182Z     'x-ms-version': '2020-07-15'
+351 2026-03-03T13:18:28.182Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+352 2026-03-03T13:18:28.182Z     'x-ms-consistency-level': 'Session'
+353 2026-03-03T13:18:28.182Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+354 2026-03-03T13:18:28.182Z     'x-ms-activity-id': '2b13a29e-9926-4c2a-8dd5-b11d487794bf'
+355 2026-03-03T13:18:28.182Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+356 2026-03-03T13:18:28.182Z     'authorization': 'REDACTED'
+357 2026-03-03T13:18:28.182Z     'Accept': 'application/json'
+358 2026-03-03T13:18:28.182Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+359 2026-03-03T13:18:28.182Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+360 2026-03-03T13:18:28.182Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+361 2026-03-03T13:18:28.182Z     'Content-Length': '0'
+362 2026-03-03T13:18:28.182Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+363 2026-03-03T13:18:28.182Z No body was attached to the request
+364 2026-03-03T13:18:28.272Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+365 2026-03-03T13:18:28.272Z Response headers:
+366 2026-03-03T13:18:28.272Z     'Cache-Control': 'no-store, no-cache'
+367 2026-03-03T13:18:28.272Z     'Pragma': 'no-cache'
+368 2026-03-03T13:18:28.272Z     'Transfer-Encoding': 'REDACTED'
+369 2026-03-03T13:18:28.272Z     'Content-Type': 'application/json'
+370 2026-03-03T13:18:28.272Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/MaintenanceWindows/'
+371 2026-03-03T13:18:28.272Z     'Server': 'Microsoft-HTTPAPI/2.0'
+372 2026-03-03T13:18:28.272Z     'Strict-Transport-Security': 'max-age=31536000'
+373 2026-03-03T13:18:28.272Z     'x-ms-activity-id': '2b13a29e-9926-4c2a-8dd5-b11d487794bf'
+374 2026-03-03T13:18:28.272Z     'x-ms-last-state-change-utc': 'Sun, 22 Feb 2026 21:26:45.947 GMT'
+375 2026-03-03T13:18:28.272Z     'etag': '"00008a05-0000-1500-0000-69a5c5310000"'
+376 2026-03-03T13:18:28.272Z     'x-ms-schemaversion': '1.21'
+377 2026-03-03T13:18:28.272Z     'collection-partition-index': 'REDACTED'
+378 2026-03-03T13:18:28.272Z     'collection-service-index': 'REDACTED'
+379 2026-03-03T13:18:28.272Z     'lsn': '18'
+380 2026-03-03T13:18:28.272Z     'x-ms-request-charge': '2'
+381 2026-03-03T13:18:28.272Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+382 2026-03-03T13:18:28.272Z     'x-ms-content-path': 'NFtxAA=='
+383 2026-03-03T13:18:28.272Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+384 2026-03-03T13:18:28.272Z     'x-ms-xp-role': '2'
+385 2026-03-03T13:18:28.272Z     'x-ms-global-Committed-lsn': '18'
+386 2026-03-03T13:18:28.272Z     'x-ms-number-of-read-regions': '0'
+387 2026-03-03T13:18:28.272Z     'x-ms-item-lsn': '1'
+388 2026-03-03T13:18:28.272Z     'x-ms-transport-request-id': '7'
+389 2026-03-03T13:18:28.272Z     'x-ms-cosmos-llsn': '18'
+390 2026-03-03T13:18:28.272Z     'x-ms-cosmos-item-llsn': '1'
+391 2026-03-03T13:18:28.272Z     'x-ms-session-token': '0:-1#18'
+392 2026-03-03T13:18:28.272Z     'x-ms-request-duration-ms': '20.494'
+393 2026-03-03T13:18:28.272Z     'x-ms-serviceversion': 'version=2.14.0.0'
+394 2026-03-03T13:18:28.272Z     'x-ms-cosmos-physical-partition-id': '0'
+395 2026-03-03T13:18:28.272Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+396 2026-03-03T13:18:28.272Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+397 2026-03-03T13:18:28.272Z     'x-ms-gatewayversion': 'version=2.14.0'
+398 2026-03-03T13:18:28.272Z     'Date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+399 2026-03-03T13:18:28.273Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/MaintenanceWindows/docs/'
+400 2026-03-03T13:18:28.273Z Request method: 'POST'
+401 2026-03-03T13:18:28.273Z Request headers:
+402 2026-03-03T13:18:28.273Z     'Cache-Control': 'no-cache'
+403 2026-03-03T13:18:28.273Z     'x-ms-version': '2020-07-15'
+404 2026-03-03T13:18:28.273Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+405 2026-03-03T13:18:28.273Z     'x-ms-consistency-level': 'Session'
+406 2026-03-03T13:18:28.273Z     'Content-Type': 'application/query+json'
+407 2026-03-03T13:18:28.273Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+408 2026-03-03T13:18:28.273Z     'x-ms-activity-id': '19b8cdf2-36a1-4e62-9c2d-8f2cd5febfb3'
+409 2026-03-03T13:18:28.273Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+410 2026-03-03T13:18:28.273Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+411 2026-03-03T13:18:28.273Z     'authorization': 'REDACTED'
+412 2026-03-03T13:18:28.273Z     'Accept': 'application/json'
+413 2026-03-03T13:18:28.273Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+414 2026-03-03T13:18:28.273Z     'x-ms-cosmos-correlated-activityid': '973f7dec-67e0-483f-965c-c045a550deea'
+415 2026-03-03T13:18:28.273Z     'x-ms-cosmos-intended-collection-rid': 'NFtxANZaL0M='
+416 2026-03-03T13:18:28.273Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+417 2026-03-03T13:18:28.273Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+418 2026-03-03T13:18:28.273Z     'x-ms-documentdb-isquery': 'true'
+419 2026-03-03T13:18:28.273Z     'Content-Length': '264'
+420 2026-03-03T13:18:28.273Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+421 2026-03-03T13:18:28.273Z A body is sent with the request
+422 2026-03-03T13:18:28.339Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+423 2026-03-03T13:18:28.339Z Response headers:
+424 2026-03-03T13:18:28.339Z     'Cache-Control': 'no-store, no-cache'
+425 2026-03-03T13:18:28.339Z     'Pragma': 'no-cache'
+426 2026-03-03T13:18:28.339Z     'Transfer-Encoding': 'REDACTED'
+427 2026-03-03T13:18:28.339Z     'Content-Type': 'application/json'
+428 2026-03-03T13:18:28.339Z     'Server': 'Microsoft-HTTPAPI/2.0'
+429 2026-03-03T13:18:28.339Z     'Strict-Transport-Security': 'max-age=31536000'
+430 2026-03-03T13:18:28.339Z     'x-ms-activity-id': '19b8cdf2-36a1-4e62-9c2d-8f2cd5febfb3'
+431 2026-03-03T13:18:28.339Z     'x-ms-last-state-change-utc': 'Sun, 22 Feb 2026 00:28:42.879 GMT'
+432 2026-03-03T13:18:28.339Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+433 2026-03-03T13:18:28.339Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=0;documentsCount=17;collectionSize=0;'
+434 2026-03-03T13:18:28.339Z     'x-ms-schemaversion': '1.21'
+435 2026-03-03T13:18:28.339Z     'lsn': '18'
+436 2026-03-03T13:18:28.339Z     'x-ms-item-count': '0'
+437 2026-03-03T13:18:28.339Z     'x-ms-request-charge': '2.89'
+438 2026-03-03T13:18:28.339Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/MaintenanceWindows'
+439 2026-03-03T13:18:28.339Z     'x-ms-content-path': 'NFtxANZaL0M='
+440 2026-03-03T13:18:28.339Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+441 2026-03-03T13:18:28.339Z     'x-ms-xp-role': '1'
+442 2026-03-03T13:18:28.339Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":false}'
+443 2026-03-03T13:18:28.339Z     'x-ms-global-Committed-lsn': '18'
+444 2026-03-03T13:18:28.339Z     'x-ms-number-of-read-regions': '0'
+445 2026-03-03T13:18:28.339Z     'x-ms-transport-request-id': '5'
+446 2026-03-03T13:18:28.339Z     'x-ms-cosmos-llsn': '18'
+447 2026-03-03T13:18:28.339Z     'x-ms-session-token': '0:-1#18'
+448 2026-03-03T13:18:28.339Z     'x-ms-request-duration-ms': '21.433'
+449 2026-03-03T13:18:28.339Z     'x-ms-serviceversion': 'version=2.14.0.0'
+450 2026-03-03T13:18:28.339Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+451 2026-03-03T13:18:28.339Z     'x-ms-cosmos-physical-partition-id': '0'
+452 2026-03-03T13:18:28.339Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+453 2026-03-03T13:18:28.339Z     'x-ms-gatewayversion': 'version=2.14.0'
+454 2026-03-03T13:18:28.339Z     'Date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+455 2026-03-03T13:18:28.341Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/ChatHistories/'
+456 2026-03-03T13:18:28.341Z Request method: 'GET'
+457 2026-03-03T13:18:28.341Z Request headers:
+458 2026-03-03T13:18:28.341Z     'Cache-Control': 'no-cache'
+459 2026-03-03T13:18:28.341Z     'x-ms-version': '2020-07-15'
+460 2026-03-03T13:18:28.341Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+461 2026-03-03T13:18:28.341Z     'x-ms-consistency-level': 'Session'
+462 2026-03-03T13:18:28.341Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+463 2026-03-03T13:18:28.341Z     'x-ms-activity-id': 'f1b2af89-b149-4fab-9b61-104088aa7832'
+464 2026-03-03T13:18:28.341Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+465 2026-03-03T13:18:28.341Z     'authorization': 'REDACTED'
+466 2026-03-03T13:18:28.341Z     'Accept': 'application/json'
+467 2026-03-03T13:18:28.341Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+468 2026-03-03T13:18:28.341Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+469 2026-03-03T13:18:28.341Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+470 2026-03-03T13:18:28.341Z     'Content-Length': '0'
+471 2026-03-03T13:18:28.341Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+472 2026-03-03T13:18:28.341Z No body was attached to the request
+473 2026-03-03T13:18:28.443Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+474 2026-03-03T13:18:28.443Z Response headers:
+475 2026-03-03T13:18:28.443Z     'Cache-Control': 'no-store, no-cache'
+476 2026-03-03T13:18:28.443Z     'Pragma': 'no-cache'
+477 2026-03-03T13:18:28.443Z     'Transfer-Encoding': 'REDACTED'
+478 2026-03-03T13:18:28.443Z     'Content-Type': 'application/json'
+479 2026-03-03T13:18:28.443Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/ChatHistories/'
+480 2026-03-03T13:18:28.443Z     'Server': 'Microsoft-HTTPAPI/2.0'
+481 2026-03-03T13:18:28.443Z     'Strict-Transport-Security': 'max-age=31536000'
+482 2026-03-03T13:18:28.443Z     'x-ms-activity-id': 'f1b2af89-b149-4fab-9b61-104088aa7832'
+483 2026-03-03T13:18:28.443Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 12:15:14.201 GMT'
+484 2026-03-03T13:18:28.443Z     'etag': '"0000ab06-0000-1500-0000-69a6d38d0000"'
+485 2026-03-03T13:18:28.443Z     'x-ms-schemaversion': '1.21'
+486 2026-03-03T13:18:28.443Z     'collection-partition-index': 'REDACTED'
+487 2026-03-03T13:18:28.443Z     'collection-service-index': 'REDACTED'
+488 2026-03-03T13:18:28.443Z     'lsn': '18'
+489 2026-03-03T13:18:28.443Z     'x-ms-request-charge': '2'
+490 2026-03-03T13:18:28.443Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+491 2026-03-03T13:18:28.443Z     'x-ms-content-path': 'NFtxAA=='
+492 2026-03-03T13:18:28.443Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+493 2026-03-03T13:18:28.443Z     'x-ms-xp-role': '2'
+494 2026-03-03T13:18:28.443Z     'x-ms-global-Committed-lsn': '18'
+495 2026-03-03T13:18:28.443Z     'x-ms-number-of-read-regions': '0'
+496 2026-03-03T13:18:28.443Z     'x-ms-item-lsn': '1'
+497 2026-03-03T13:18:28.443Z     'x-ms-transport-request-id': '1'
+498 2026-03-03T13:18:28.443Z     'x-ms-cosmos-llsn': '18'
+499 2026-03-03T13:18:28.443Z     'x-ms-cosmos-item-llsn': '1'
+500 2026-03-03T13:18:28.443Z     'x-ms-session-token': '0:-1#18'
+501 2026-03-03T13:18:28.443Z     'x-ms-request-duration-ms': '20.731'
+502 2026-03-03T13:18:28.443Z     'x-ms-serviceversion': 'version=2.14.0.0'
+503 2026-03-03T13:18:28.443Z     'x-ms-cosmos-physical-partition-id': '0'
+504 2026-03-03T13:18:28.443Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+505 2026-03-03T13:18:28.443Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+506 2026-03-03T13:18:28.443Z     'x-ms-gatewayversion': 'version=2.14.0'
+507 2026-03-03T13:18:28.443Z     'Date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+508 2026-03-03T13:18:28.443Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/ChatHistories/docs/unknown/'
+509 2026-03-03T13:18:28.443Z Request method: 'GET'
+510 2026-03-03T13:18:28.443Z Request headers:
+511 2026-03-03T13:18:28.443Z     'Cache-Control': 'no-cache'
+512 2026-03-03T13:18:28.443Z     'x-ms-version': '2020-07-15'
+513 2026-03-03T13:18:28.443Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+514 2026-03-03T13:18:28.443Z     'x-ms-consistency-level': 'Session'
+515 2026-03-03T13:18:28.443Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+516 2026-03-03T13:18:28.443Z     'x-ms-activity-id': '44e4b8d0-0190-4455-9341-18eaacfbd45d'
+517 2026-03-03T13:18:28.443Z     'x-ms-documentdb-partitionkey': '["unknown"]'
+518 2026-03-03T13:18:28.443Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+519 2026-03-03T13:18:28.443Z     'authorization': 'REDACTED'
+520 2026-03-03T13:18:28.443Z     'Accept': 'application/json'
+521 2026-03-03T13:18:28.443Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+522 2026-03-03T13:18:28.443Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAJlJuY0='
+523 2026-03-03T13:18:28.443Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+524 2026-03-03T13:18:28.443Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+525 2026-03-03T13:18:28.443Z     'Content-Length': '0'
+526 2026-03-03T13:18:28.443Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+527 2026-03-03T13:18:28.443Z No body was attached to the request
+528 2026-03-03T13:18:28.539Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 404
+529 2026-03-03T13:18:28.539Z Response headers:
+530 2026-03-03T13:18:28.539Z     'Transfer-Encoding': 'REDACTED'
+531 2026-03-03T13:18:28.539Z     'Content-Type': 'application/json'
+532 2026-03-03T13:18:28.539Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/ChatHistories/docs/unknown/'
+533 2026-03-03T13:18:28.539Z     'Server': 'Microsoft-HTTPAPI/2.0'
+534 2026-03-03T13:18:28.539Z     'x-ms-activity-id': '44e4b8d0-0190-4455-9341-18eaacfbd45d'
+535 2026-03-03T13:18:28.539Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 12:15:16.021 GMT'
+536 2026-03-03T13:18:28.539Z     'x-ms-schemaversion': '1.21'
+537 2026-03-03T13:18:28.539Z     'lsn': '18'
+538 2026-03-03T13:18:28.539Z     'x-ms-request-charge': '1'
+539 2026-03-03T13:18:28.539Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+540 2026-03-03T13:18:28.539Z     'x-ms-xp-role': '1'
+541 2026-03-03T13:18:28.539Z     'x-ms-global-Committed-lsn': '18'
+542 2026-03-03T13:18:28.539Z     'x-ms-number-of-read-regions': '0'
+543 2026-03-03T13:18:28.539Z     'x-ms-transport-request-id': '1'
+544 2026-03-03T13:18:28.539Z     'x-ms-cosmos-llsn': '18'
+545 2026-03-03T13:18:28.539Z     'x-ms-session-token': '0:-1#18'
+546 2026-03-03T13:18:28.539Z     'x-ms-request-duration-ms': '21.147'
+547 2026-03-03T13:18:28.539Z     'x-ms-serviceversion': 'version=2.14.0.0'
+548 2026-03-03T13:18:28.539Z     'x-ms-cosmos-physical-partition-id': '0'
+549 2026-03-03T13:18:28.539Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+550 2026-03-03T13:18:28.539Z     'Strict-Transport-Security': 'max-age=31536000'
+551 2026-03-03T13:18:28.539Z     'x-ms-gatewayversion': 'version=2.14.0'
+552 2026-03-03T13:18:28.539Z     'Date': 'Tue, 03 Mar 2026 13:18:28 GMT'
+553 2026-03-03T13:18:30.118Z INFO:azure.identity.aio._internal.decorators:AzureCliCredential.get_token_info succeeded
+554 2026-03-03T13:18:30.118Z INFO:azure.core.pipeline.policies.http_logging_policy:Request URL: 'https://msagthack-aifoundry-2bynis23zmxny.services.ai.azure.com/api/projects/msagthack-aiproject-2bynis23zmxny/agents/MaintenanceSchedulerAgent/versions?api-version=REDACTED'
+555 2026-03-03T13:18:30.118Z Request method: 'POST'
+556 2026-03-03T13:18:30.118Z Request headers:
+557 2026-03-03T13:18:30.118Z     'Content-Type': 'application/json'
+558 2026-03-03T13:18:30.118Z     'Content-Length': '606'
+559 2026-03-03T13:18:30.118Z     'Accept': 'application/json'
+560 2026-03-03T13:18:30.118Z     'x-ms-client-request-id': '77d6365a-1703-11f1-81cf-a1db3160c550'
+561 2026-03-03T13:18:30.118Z     'User-Agent': 'agent-framework-python/1.0.0b260107 azsdk-python-ai-projects/2.0.0b3 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+562 2026-03-03T13:18:30.118Z     'Authorization': 'REDACTED'
+563 2026-03-03T13:18:30.118Z A body is sent with the request
+564 2026-03-03T13:18:30.593Z INFO:azure.core.pipeline.policies.http_logging_policy:Response status: 200
+565 2026-03-03T13:18:30.593Z Response headers:
+566 2026-03-03T13:18:30.593Z     'Transfer-Encoding': 'chunked'
+567 2026-03-03T13:18:30.593Z     'Content-Type': 'application/json; charset=utf-8'
+568 2026-03-03T13:18:30.593Z     'Content-Encoding': 'REDACTED'
+569 2026-03-03T13:18:30.593Z     'Vary': 'REDACTED'
+570 2026-03-03T13:18:30.593Z     'request-context': 'REDACTED'
+571 2026-03-03T13:18:30.593Z     'x-ms-response-type': 'REDACTED'
+572 2026-03-03T13:18:30.593Z     'x-request-id': 'REDACTED'
+573 2026-03-03T13:18:30.593Z     'api-supported-versions': 'REDACTED'
+574 2026-03-03T13:18:30.593Z     'azureml-served-by-cluster': 'REDACTED'
+575 2026-03-03T13:18:30.593Z     'apim-request-id': 'REDACTED'
+576 2026-03-03T13:18:30.593Z     'Strict-Transport-Security': 'REDACTED'
+577 2026-03-03T13:18:30.593Z     'x-content-type-options': 'REDACTED'
+578 2026-03-03T13:18:30.593Z     'x-ms-region': 'REDACTED'
+579 2026-03-03T13:18:30.593Z     'Date': 'Tue, 03 Mar 2026 13:18:29 GMT'
+580 2026-03-03T13:18:32.855Z INFO:azure.identity.aio._internal.decorators:AzureCliCredential.get_token_info succeeded
+581 2026-03-03T13:18:37.987Z INFO:httpx:HTTP Request: POST https://msagthack-aifoundry-2bynis23zmxny.services.ai.azure.com/api/projects/msagthack-aiproject-2bynis23zmxny/openai/responses?api-version=2025-11-15-preview "HTTP/1.1 200 OK"
+582 2026-03-03T13:18:38.092Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/ChatHistories/docs/unknown/'
+583 2026-03-03T13:18:38.092Z Request method: 'GET'
+584 2026-03-03T13:18:38.092Z Request headers:
+585 2026-03-03T13:18:38.092Z     'Cache-Control': 'no-cache'
+586 2026-03-03T13:18:38.092Z     'x-ms-version': '2020-07-15'
+587 2026-03-03T13:18:38.092Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+588 2026-03-03T13:18:38.092Z     'x-ms-consistency-level': 'Session'
+589 2026-03-03T13:18:38.092Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+590 2026-03-03T13:18:38.092Z     'x-ms-activity-id': '97768e48-4756-4109-a14c-5d06aebfbae4'
+591 2026-03-03T13:18:38.092Z     'x-ms-documentdb-partitionkey': '["unknown"]'
+592 2026-03-03T13:18:38.092Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+593 2026-03-03T13:18:38.092Z     'authorization': 'REDACTED'
+594 2026-03-03T13:18:38.092Z     'Accept': 'application/json'
+595 2026-03-03T13:18:38.092Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+596 2026-03-03T13:18:38.092Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAJlJuY0='
+597 2026-03-03T13:18:38.092Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+598 2026-03-03T13:18:38.092Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+599 2026-03-03T13:18:38.092Z     'Content-Length': '0'
+600 2026-03-03T13:18:38.092Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+601 2026-03-03T13:18:38.092Z No body was attached to the request
+602 2026-03-03T13:18:38.293Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 404
+603 2026-03-03T13:18:38.293Z Response headers:
+604 2026-03-03T13:18:38.293Z     'Transfer-Encoding': 'REDACTED'
+605 2026-03-03T13:18:38.293Z     'Content-Type': 'application/json'
+606 2026-03-03T13:18:38.293Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/ChatHistories/docs/unknown/'
+607 2026-03-03T13:18:38.293Z     'Server': 'Microsoft-HTTPAPI/2.0'
+608 2026-03-03T13:18:38.293Z     'x-ms-activity-id': '97768e48-4756-4109-a14c-5d06aebfbae4'
+609 2026-03-03T13:18:38.293Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 12:15:14.201 GMT'
+610 2026-03-03T13:18:38.293Z     'x-ms-schemaversion': '1.21'
+611 2026-03-03T13:18:38.293Z     'lsn': '18'
+612 2026-03-03T13:18:38.293Z     'x-ms-request-charge': '1'
+613 2026-03-03T13:18:38.293Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+614 2026-03-03T13:18:38.293Z     'x-ms-xp-role': '1'
+615 2026-03-03T13:18:38.293Z     'x-ms-global-Committed-lsn': '18'
+616 2026-03-03T13:18:38.293Z     'x-ms-number-of-read-regions': '0'
+617 2026-03-03T13:18:38.293Z     'x-ms-transport-request-id': '4'
+618 2026-03-03T13:18:38.293Z     'x-ms-cosmos-llsn': '18'
+619 2026-03-03T13:18:38.293Z     'x-ms-session-token': '0:-1#18'
+620 2026-03-03T13:18:38.293Z     'x-ms-request-duration-ms': '20.034'
+621 2026-03-03T13:18:38.293Z     'x-ms-serviceversion': 'version=2.14.0.0'
+622 2026-03-03T13:18:38.293Z     'x-ms-cosmos-physical-partition-id': '0'
+623 2026-03-03T13:18:38.293Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+624 2026-03-03T13:18:38.293Z     'Strict-Transport-Security': 'max-age=31536000'
+625 2026-03-03T13:18:38.293Z     'x-ms-gatewayversion': 'version=2.14.0'
+626 2026-03-03T13:18:38.293Z     'Date': 'Tue, 03 Mar 2026 13:18:37 GMT'
+627 2026-03-03T13:18:38.294Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/ChatHistories/'
+628 2026-03-03T13:18:38.294Z Request method: 'GET'
+629 2026-03-03T13:18:38.294Z Request headers:
+630 2026-03-03T13:18:38.294Z     'Cache-Control': 'no-cache'
+631 2026-03-03T13:18:38.294Z     'x-ms-version': '2020-07-15'
+632 2026-03-03T13:18:38.294Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+633 2026-03-03T13:18:38.294Z     'x-ms-consistency-level': 'Session'
+634 2026-03-03T13:18:38.294Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+635 2026-03-03T13:18:38.294Z     'x-ms-activity-id': 'c5143020-cc13-443b-8f47-7ce577d82ba7'
+636 2026-03-03T13:18:38.294Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+637 2026-03-03T13:18:38.294Z     'authorization': 'REDACTED'
+638 2026-03-03T13:18:38.294Z     'Accept': 'application/json'
+639 2026-03-03T13:18:38.294Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+640 2026-03-03T13:18:38.294Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+641 2026-03-03T13:18:38.294Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+642 2026-03-03T13:18:38.294Z     'Content-Length': '0'
+643 2026-03-03T13:18:38.294Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+644 2026-03-03T13:18:38.294Z No body was attached to the request
+645 2026-03-03T13:18:38.362Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+646 2026-03-03T13:18:38.362Z Response headers:
+647 2026-03-03T13:18:38.362Z     'Cache-Control': 'no-store, no-cache'
+648 2026-03-03T13:18:38.362Z     'Pragma': 'no-cache'
+649 2026-03-03T13:18:38.362Z     'Transfer-Encoding': 'REDACTED'
+650 2026-03-03T13:18:38.362Z     'Content-Type': 'application/json'
+651 2026-03-03T13:18:38.362Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/ChatHistories/'
+652 2026-03-03T13:18:38.362Z     'Server': 'Microsoft-HTTPAPI/2.0'
+653 2026-03-03T13:18:38.362Z     'Strict-Transport-Security': 'max-age=31536000'
+654 2026-03-03T13:18:38.362Z     'x-ms-activity-id': 'c5143020-cc13-443b-8f47-7ce577d82ba7'
+655 2026-03-03T13:18:38.362Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 12:15:16.021 GMT'
+656 2026-03-03T13:18:38.362Z     'etag': '"0000ab06-0000-1500-0000-69a6d38d0000"'
+657 2026-03-03T13:18:38.362Z     'x-ms-schemaversion': '1.21'
+658 2026-03-03T13:18:38.362Z     'collection-partition-index': 'REDACTED'
+659 2026-03-03T13:18:38.362Z     'collection-service-index': 'REDACTED'
+660 2026-03-03T13:18:38.362Z     'lsn': '18'
+661 2026-03-03T13:18:38.362Z     'x-ms-request-charge': '2'
+662 2026-03-03T13:18:38.362Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+663 2026-03-03T13:18:38.362Z     'x-ms-content-path': 'NFtxAA=='
+664 2026-03-03T13:18:38.362Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+665 2026-03-03T13:18:38.362Z     'x-ms-xp-role': '1'
+666 2026-03-03T13:18:38.362Z     'x-ms-global-Committed-lsn': '18'
+667 2026-03-03T13:18:38.362Z     'x-ms-number-of-read-regions': '0'
+668 2026-03-03T13:18:38.362Z     'x-ms-item-lsn': '1'
+669 2026-03-03T13:18:38.362Z     'x-ms-transport-request-id': '2'
+670 2026-03-03T13:18:38.362Z     'x-ms-cosmos-llsn': '18'
+671 2026-03-03T13:18:38.362Z     'x-ms-cosmos-item-llsn': '1'
+672 2026-03-03T13:18:38.362Z     'x-ms-session-token': '0:-1#18'
+673 2026-03-03T13:18:38.362Z     'x-ms-request-duration-ms': '19.866'
+674 2026-03-03T13:18:38.362Z     'x-ms-serviceversion': 'version=2.14.0.0'
+675 2026-03-03T13:18:38.362Z     'x-ms-cosmos-physical-partition-id': '0'
+676 2026-03-03T13:18:38.362Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+677 2026-03-03T13:18:38.362Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+678 2026-03-03T13:18:38.362Z     'x-ms-gatewayversion': 'version=2.14.0'
+679 2026-03-03T13:18:38.362Z     'Date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+680 2026-03-03T13:18:38.364Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/ChatHistories/docs/'
+681 2026-03-03T13:18:38.364Z Request method: 'POST'
+682 2026-03-03T13:18:38.364Z Request headers:
+683 2026-03-03T13:18:38.364Z     'Cache-Control': 'no-cache'
+684 2026-03-03T13:18:38.364Z     'x-ms-version': '2020-07-15'
+685 2026-03-03T13:18:38.364Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+686 2026-03-03T13:18:38.364Z     'x-ms-consistency-level': 'Session'
+687 2026-03-03T13:18:38.364Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+688 2026-03-03T13:18:38.364Z     'x-ms-activity-id': 'a21b2afd-6712-44d4-af49-f341540c4523'
+689 2026-03-03T13:18:38.364Z     'x-ms-documentdb-partitionkey': '["unknown"]'
+690 2026-03-03T13:18:38.364Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+691 2026-03-03T13:18:38.364Z     'authorization': 'REDACTED'
+692 2026-03-03T13:18:38.364Z     'Content-Type': 'application/json'
+693 2026-03-03T13:18:38.364Z     'Accept': 'application/json'
+694 2026-03-03T13:18:38.364Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+695 2026-03-03T13:18:38.364Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAJlJuY0='
+696 2026-03-03T13:18:38.364Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+697 2026-03-03T13:18:38.364Z     'x-ms-thinclient-proxy-operation-type': 'Upsert'
+698 2026-03-03T13:18:38.364Z     'x-ms-documentdb-is-upsert': 'True'
+699 2026-03-03T13:18:38.364Z     'Content-Length': '4120'
+700 2026-03-03T13:18:38.364Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+701 2026-03-03T13:18:38.364Z A body is sent with the request
+702 2026-03-03T13:18:38.441Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 201
+703 2026-03-03T13:18:38.441Z Response headers:
+704 2026-03-03T13:18:38.441Z     'Cache-Control': 'no-store, no-cache'
+705 2026-03-03T13:18:38.441Z     'Pragma': 'no-cache'
+706 2026-03-03T13:18:38.441Z     'Transfer-Encoding': 'REDACTED'
+707 2026-03-03T13:18:38.441Z     'Content-Type': 'application/json'
+708 2026-03-03T13:18:38.441Z     'Server': 'Microsoft-HTTPAPI/2.0'
+709 2026-03-03T13:18:38.441Z     'Strict-Transport-Security': 'max-age=31536000'
+710 2026-03-03T13:18:38.441Z     'x-ms-activity-id': 'a21b2afd-6712-44d4-af49-f341540c4523'
+711 2026-03-03T13:18:38.441Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 12:15:05.483 GMT'
+712 2026-03-03T13:18:38.441Z     'etag': '"0300f508-0000-1500-0000-69a6dfae0000"'
+713 2026-03-03T13:18:38.441Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+714 2026-03-03T13:18:38.441Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=229;documentsCount=7;collectionSize=231;'
+715 2026-03-03T13:18:38.441Z     'x-ms-schemaversion': '1.21'
+716 2026-03-03T13:18:38.441Z     'lsn': '19'
+717 2026-03-03T13:18:38.441Z     'x-ms-request-charge': '9.24'
+718 2026-03-03T13:18:38.441Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/ChatHistories'
+719 2026-03-03T13:18:38.441Z     'x-ms-content-path': 'NFtxAJlJuY0='
+720 2026-03-03T13:18:38.441Z     'x-ms-quorum-acked-lsn': '18'
+721 2026-03-03T13:18:38.441Z     'x-ms-current-write-quorum': '3'
+722 2026-03-03T13:18:38.441Z     'x-ms-current-replica-set-size': '4'
+723 2026-03-03T13:18:38.441Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+724 2026-03-03T13:18:38.441Z     'x-ms-xp-role': '1'
+725 2026-03-03T13:18:38.441Z     'x-ms-global-Committed-lsn': '18'
+726 2026-03-03T13:18:38.441Z     'x-ms-number-of-read-regions': '0'
+727 2026-03-03T13:18:38.441Z     'x-ms-transport-request-id': '1'
+728 2026-03-03T13:18:38.441Z     'x-ms-cosmos-llsn': '19'
+729 2026-03-03T13:18:38.441Z     'x-ms-cosmos-quorum-acked-llsn': '18'
+730 2026-03-03T13:18:38.441Z     'x-ms-session-token': '0:-1#19'
+731 2026-03-03T13:18:38.441Z     'x-ms-request-duration-ms': '3.639'
+732 2026-03-03T13:18:38.441Z     'x-ms-serviceversion': 'version=2.14.0.0'
+733 2026-03-03T13:18:38.441Z     'x-ms-cosmos-physical-partition-id': '0'
+734 2026-03-03T13:18:38.441Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+735 2026-03-03T13:18:38.441Z     'x-ms-gatewayversion': 'version=2.14.0'
+736 2026-03-03T13:18:38.441Z     'Date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+737 2026-03-03T13:18:38.444Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/MaintenanceSchedules/'
+738 2026-03-03T13:18:38.444Z Request method: 'GET'
+739 2026-03-03T13:18:38.444Z Request headers:
+740 2026-03-03T13:18:38.444Z     'Cache-Control': 'no-cache'
+741 2026-03-03T13:18:38.444Z     'x-ms-version': '2020-07-15'
+742 2026-03-03T13:18:38.444Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+743 2026-03-03T13:18:38.444Z     'x-ms-consistency-level': 'Session'
+744 2026-03-03T13:18:38.444Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+745 2026-03-03T13:18:38.444Z     'x-ms-activity-id': 'c8660534-b305-449d-8139-f5225099d834'
+746 2026-03-03T13:18:38.444Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+747 2026-03-03T13:18:38.444Z     'authorization': 'REDACTED'
+748 2026-03-03T13:18:38.444Z     'Accept': 'application/json'
+749 2026-03-03T13:18:38.444Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+750 2026-03-03T13:18:38.444Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+751 2026-03-03T13:18:38.444Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+752 2026-03-03T13:18:38.444Z     'Content-Length': '0'
+753 2026-03-03T13:18:38.444Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+754 2026-03-03T13:18:38.444Z No body was attached to the request
+755 2026-03-03T13:18:38.556Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+756 2026-03-03T13:18:38.556Z Response headers:
+757 2026-03-03T13:18:38.556Z     'Cache-Control': 'no-store, no-cache'
+758 2026-03-03T13:18:38.556Z     'Pragma': 'no-cache'
+759 2026-03-03T13:18:38.556Z     'Transfer-Encoding': 'REDACTED'
+760 2026-03-03T13:18:38.556Z     'Content-Type': 'application/json'
+761 2026-03-03T13:18:38.556Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/MaintenanceSchedules/'
+762 2026-03-03T13:18:38.556Z     'Server': 'Microsoft-HTTPAPI/2.0'
+763 2026-03-03T13:18:38.556Z     'Strict-Transport-Security': 'max-age=31536000'
+764 2026-03-03T13:18:38.556Z     'x-ms-activity-id': 'c8660534-b305-449d-8139-f5225099d834'
+765 2026-03-03T13:18:38.556Z     'x-ms-last-state-change-utc': 'Mon, 23 Feb 2026 02:38:17.237 GMT'
+766 2026-03-03T13:18:38.556Z     'etag': '"0000b006-0000-1500-0000-69a6d38e0000"'
+767 2026-03-03T13:18:38.556Z     'x-ms-schemaversion': '1.21'
+768 2026-03-03T13:18:38.556Z     'collection-partition-index': 'REDACTED'
+769 2026-03-03T13:18:38.556Z     'collection-service-index': 'REDACTED'
+770 2026-03-03T13:18:38.556Z     'lsn': '14'
+771 2026-03-03T13:18:38.556Z     'x-ms-request-charge': '2'
+772 2026-03-03T13:18:38.556Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+773 2026-03-03T13:18:38.556Z     'x-ms-content-path': 'NFtxAA=='
+774 2026-03-03T13:18:38.556Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+775 2026-03-03T13:18:38.556Z     'x-ms-xp-role': '1'
+776 2026-03-03T13:18:38.556Z     'x-ms-global-Committed-lsn': '14'
+777 2026-03-03T13:18:38.556Z     'x-ms-number-of-read-regions': '0'
+778 2026-03-03T13:18:38.556Z     'x-ms-item-lsn': '1'
+779 2026-03-03T13:18:38.556Z     'x-ms-transport-request-id': '8'
+780 2026-03-03T13:18:38.556Z     'x-ms-cosmos-llsn': '14'
+781 2026-03-03T13:18:38.556Z     'x-ms-cosmos-item-llsn': '1'
+782 2026-03-03T13:18:38.556Z     'x-ms-session-token': '0:-1#14'
+783 2026-03-03T13:18:38.556Z     'x-ms-request-duration-ms': '20.388'
+784 2026-03-03T13:18:38.556Z     'x-ms-serviceversion': 'version=2.14.0.0'
+785 2026-03-03T13:18:38.556Z     'x-ms-cosmos-physical-partition-id': '0'
+786 2026-03-03T13:18:38.556Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+787 2026-03-03T13:18:38.556Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+788 2026-03-03T13:18:38.556Z     'x-ms-gatewayversion': 'version=2.14.0'
+789 2026-03-03T13:18:38.556Z     'Date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+790 2026-03-03T13:18:38.557Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/MaintenanceSchedules/docs/'
+791 2026-03-03T13:18:38.557Z Request method: 'POST'
+792 2026-03-03T13:18:38.557Z Request headers:
+793 2026-03-03T13:18:38.557Z     'Cache-Control': 'no-cache'
+794 2026-03-03T13:18:38.557Z     'x-ms-version': '2020-07-15'
+795 2026-03-03T13:18:38.557Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+796 2026-03-03T13:18:38.557Z     'x-ms-consistency-level': 'Session'
+797 2026-03-03T13:18:38.557Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+798 2026-03-03T13:18:38.557Z     'x-ms-activity-id': '02a4aee2-82c8-40ae-9753-21125586c812'
+799 2026-03-03T13:18:38.557Z     'x-ms-documentdb-partitionkey': '["sched-1772540318.443657"]'
+800 2026-03-03T13:18:38.557Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+801 2026-03-03T13:18:38.557Z     'authorization': 'REDACTED'
+802 2026-03-03T13:18:38.557Z     'Content-Type': 'application/json'
+803 2026-03-03T13:18:38.557Z     'Accept': 'application/json'
+804 2026-03-03T13:18:38.557Z     'x-ms-client-id': '4027f899-0267-4576-9302-2a7aad076a8d'
+805 2026-03-03T13:18:38.557Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAOG2zqg='
+806 2026-03-03T13:18:38.557Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+807 2026-03-03T13:18:38.557Z     'x-ms-thinclient-proxy-operation-type': 'Upsert'
+808 2026-03-03T13:18:38.557Z     'x-ms-documentdb-is-upsert': 'True'
+809 2026-03-03T13:18:38.557Z     'Content-Length': '1428'
+810 2026-03-03T13:18:38.557Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+811 2026-03-03T13:18:38.557Z A body is sent with the request
+812 2026-03-03T13:18:38.607Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 201
+813 2026-03-03T13:18:38.607Z Response headers:
+814 2026-03-03T13:18:38.607Z     'Cache-Control': 'no-store, no-cache'
+815 2026-03-03T13:18:38.607Z     'Pragma': 'no-cache'
+816 2026-03-03T13:18:38.607Z     'Transfer-Encoding': 'REDACTED'
+817 2026-03-03T13:18:38.607Z     'Content-Type': 'application/json'
+818 2026-03-03T13:18:38.607Z     'Server': 'Microsoft-HTTPAPI/2.0'
+819 2026-03-03T13:18:38.607Z     'Strict-Transport-Security': 'max-age=31536000'
+820 2026-03-03T13:18:38.607Z     'x-ms-activity-id': '02a4aee2-82c8-40ae-9753-21125586c812'
+821 2026-03-03T13:18:38.607Z     'x-ms-last-state-change-utc': 'Sat, 21 Feb 2026 22:05:05.073 GMT'
+822 2026-03-03T13:18:38.607Z     'etag': '"07020cb8-0000-1500-0000-69a6dfae0000"'
+823 2026-03-03T13:18:38.607Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+824 2026-03-03T13:18:38.607Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=97;documentsCount=13;collectionSize=100;'
+825 2026-03-03T13:18:38.607Z     'x-ms-schemaversion': '1.21'
+826 2026-03-03T13:18:38.607Z     'lsn': '15'
+827 2026-03-03T13:18:38.607Z     'x-ms-request-charge': '12'
+828 2026-03-03T13:18:38.607Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/MaintenanceSchedules'
+829 2026-03-03T13:18:38.607Z     'x-ms-content-path': 'NFtxAOG2zqg='
+830 2026-03-03T13:18:38.607Z     'x-ms-quorum-acked-lsn': '14'
+831 2026-03-03T13:18:38.607Z     'x-ms-current-write-quorum': '3'
+832 2026-03-03T13:18:38.607Z     'x-ms-current-replica-set-size': '4'
+833 2026-03-03T13:18:38.607Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+834 2026-03-03T13:18:38.607Z     'x-ms-xp-role': '1'
+835 2026-03-03T13:18:38.607Z     'x-ms-global-Committed-lsn': '14'
+836 2026-03-03T13:18:38.607Z     'x-ms-number-of-read-regions': '0'
+837 2026-03-03T13:18:38.607Z     'x-ms-transport-request-id': '4'
+838 2026-03-03T13:18:38.607Z     'x-ms-cosmos-llsn': '15'
+839 2026-03-03T13:18:38.607Z     'x-ms-cosmos-quorum-acked-llsn': '14'
+840 2026-03-03T13:18:38.607Z     'x-ms-session-token': '0:-1#15'
+841 2026-03-03T13:18:38.607Z     'x-ms-request-duration-ms': '3.012'
+842 2026-03-03T13:18:38.607Z     'x-ms-serviceversion': 'version=2.14.0.0'
+843 2026-03-03T13:18:38.607Z     'x-ms-cosmos-physical-partition-id': '0'
+844 2026-03-03T13:18:38.607Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+845 2026-03-03T13:18:38.607Z     'x-ms-gatewayversion': 'version=2.14.0'
+846 2026-03-03T13:18:38.607Z     'Date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+847 2026-03-03T13:18:38.615Z INFO:main:<<< Response: POST /maintenance-scheduler/ - Status: 200
+848 2026-03-03T13:18:38.643Z INFO:main:>>> Incoming request: POST /parts-ordering/
+849 2026-03-03T13:18:38.673Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny.documents.azure.com:443/'
+850 2026-03-03T13:18:38.673Z Request method: 'GET'
+851 2026-03-03T13:18:38.673Z Request headers:
+852 2026-03-03T13:18:38.673Z     'Cache-Control': 'no-cache'
+853 2026-03-03T13:18:38.673Z     'x-ms-version': '2020-07-15'
+854 2026-03-03T13:18:38.673Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+855 2026-03-03T13:18:38.673Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+856 2026-03-03T13:18:38.673Z     'x-ms-activity-id': '36c10197-57b3-4356-961a-b33dca047b6b'
+857 2026-03-03T13:18:38.673Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+858 2026-03-03T13:18:38.673Z     'authorization': 'REDACTED'
+859 2026-03-03T13:18:38.673Z     'Accept': 'application/json'
+860 2026-03-03T13:18:38.673Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+861 2026-03-03T13:18:38.673Z     'x-ms-thinclient-proxy-resource-type': 'databaseaccount'
+862 2026-03-03T13:18:38.673Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+863 2026-03-03T13:18:38.673Z     'Content-Length': '0'
+864 2026-03-03T13:18:38.673Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+865 2026-03-03T13:18:38.673Z No body was attached to the request
+866 2026-03-03T13:18:38.967Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+867 2026-03-03T13:18:38.967Z Response headers:
+868 2026-03-03T13:18:38.967Z     'Cache-Control': 'no-store, no-cache'
+869 2026-03-03T13:18:38.967Z     'Pragma': 'no-cache'
+870 2026-03-03T13:18:38.967Z     'Transfer-Encoding': 'REDACTED'
+871 2026-03-03T13:18:38.967Z     'Content-Type': 'application/json'
+872 2026-03-03T13:18:38.967Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny.documents.azure.com/'
+873 2026-03-03T13:18:38.967Z     'Server': 'Microsoft-HTTPAPI/2.0'
+874 2026-03-03T13:18:38.967Z     'x-ms-max-media-storage-usage-mb': '2048'
+875 2026-03-03T13:18:38.967Z     'x-ms-media-storage-usage-mb': '0'
+876 2026-03-03T13:18:38.967Z     'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+877 2026-03-03T13:18:38.967Z     'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+878 2026-03-03T13:18:38.967Z     'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+879 2026-03-03T13:18:38.967Z     'Strict-Transport-Security': 'max-age=31536000'
+880 2026-03-03T13:18:38.967Z     'x-ms-gatewayversion': 'version=2.14.0'
+881 2026-03-03T13:18:38.967Z     'Date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+882 2026-03-03T13:18:38.969Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/'
+883 2026-03-03T13:18:38.969Z Request method: 'GET'
+884 2026-03-03T13:18:38.969Z Request headers:
+885 2026-03-03T13:18:38.969Z     'Cache-Control': 'no-cache'
+886 2026-03-03T13:18:38.969Z     'x-ms-version': '2020-07-15'
+887 2026-03-03T13:18:38.969Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+888 2026-03-03T13:18:38.969Z     'x-ms-consistency-level': 'Session'
+889 2026-03-03T13:18:38.969Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+890 2026-03-03T13:18:38.969Z     'x-ms-activity-id': '63dda50e-d864-462a-b176-bb2ff50a7613'
+891 2026-03-03T13:18:38.969Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+892 2026-03-03T13:18:38.969Z     'authorization': 'REDACTED'
+893 2026-03-03T13:18:38.969Z     'Accept': 'application/json'
+894 2026-03-03T13:18:38.969Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+895 2026-03-03T13:18:38.969Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+896 2026-03-03T13:18:38.969Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+897 2026-03-03T13:18:38.969Z     'Content-Length': '0'
+898 2026-03-03T13:18:38.969Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+899 2026-03-03T13:18:38.969Z No body was attached to the request
+900 2026-03-03T13:18:38.971Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/'
+901 2026-03-03T13:18:38.971Z Request method: 'GET'
+902 2026-03-03T13:18:38.971Z Request headers:
+903 2026-03-03T13:18:38.971Z     'Cache-Control': 'no-cache'
+904 2026-03-03T13:18:38.971Z     'x-ms-version': '2020-07-15'
+905 2026-03-03T13:18:38.971Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+906 2026-03-03T13:18:38.971Z     'x-ms-consistency-level': 'Session'
+907 2026-03-03T13:18:38.971Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+908 2026-03-03T13:18:38.971Z     'x-ms-activity-id': '9ae9f9c5-de4a-4587-802f-155758c472c7'
+909 2026-03-03T13:18:38.971Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+910 2026-03-03T13:18:38.971Z     'authorization': 'REDACTED'
+911 2026-03-03T13:18:38.971Z     'Accept': 'application/json'
+912 2026-03-03T13:18:38.971Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+913 2026-03-03T13:18:38.971Z     'x-ms-thinclient-proxy-resource-type': 'databaseaccount'
+914 2026-03-03T13:18:38.971Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+915 2026-03-03T13:18:38.971Z     'Content-Length': '0'
+916 2026-03-03T13:18:38.971Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+917 2026-03-03T13:18:38.971Z No body was attached to the request
+918 2026-03-03T13:18:39.236Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+919 2026-03-03T13:18:39.236Z Response headers:
+920 2026-03-03T13:18:39.236Z     'Cache-Control': 'no-store, no-cache'
+921 2026-03-03T13:18:39.236Z     'Pragma': 'no-cache'
+922 2026-03-03T13:18:39.236Z     'Transfer-Encoding': 'REDACTED'
+923 2026-03-03T13:18:39.236Z     'Content-Type': 'application/json'
+924 2026-03-03T13:18:39.236Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/'
+925 2026-03-03T13:18:39.236Z     'Server': 'Microsoft-HTTPAPI/2.0'
+926 2026-03-03T13:18:39.236Z     'x-ms-max-media-storage-usage-mb': '2048'
+927 2026-03-03T13:18:39.236Z     'x-ms-media-storage-usage-mb': '0'
+928 2026-03-03T13:18:39.236Z     'x-ms-databaseaccount-consumed-mb': 'REDACTED'
+929 2026-03-03T13:18:39.236Z     'x-ms-databaseaccount-reserved-mb': 'REDACTED'
+930 2026-03-03T13:18:39.236Z     'x-ms-databaseaccount-provisioned-mb': 'REDACTED'
+931 2026-03-03T13:18:39.236Z     'Strict-Transport-Security': 'max-age=31536000'
+932 2026-03-03T13:18:39.236Z     'x-ms-gatewayversion': 'version=2.14.0'
+933 2026-03-03T13:18:39.236Z     'Date': 'Tue, 03 Mar 2026 13:18:38 GMT'
+934 2026-03-03T13:18:39.274Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+935 2026-03-03T13:18:39.274Z Response headers:
+936 2026-03-03T13:18:39.274Z     'Cache-Control': 'no-store, no-cache'
+937 2026-03-03T13:18:39.274Z     'Pragma': 'no-cache'
+938 2026-03-03T13:18:39.274Z     'Transfer-Encoding': 'REDACTED'
+939 2026-03-03T13:18:39.274Z     'Content-Type': 'application/json'
+940 2026-03-03T13:18:39.274Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/WorkOrders/'
+941 2026-03-03T13:18:39.274Z     'Server': 'Microsoft-HTTPAPI/2.0'
+942 2026-03-03T13:18:39.274Z     'Strict-Transport-Security': 'max-age=31536000'
+943 2026-03-03T13:18:39.274Z     'x-ms-activity-id': '63dda50e-d864-462a-b176-bb2ff50a7613'
+944 2026-03-03T13:18:39.274Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:10.234 GMT'
+945 2026-03-03T13:18:39.274Z     'etag': '"00008005-0000-1500-0000-69a5c5300000"'
+946 2026-03-03T13:18:39.274Z     'x-ms-schemaversion': '1.21'
+947 2026-03-03T13:18:39.274Z     'collection-partition-index': 'REDACTED'
+948 2026-03-03T13:18:39.274Z     'collection-service-index': 'REDACTED'
+949 2026-03-03T13:18:39.274Z     'lsn': '63'
+950 2026-03-03T13:18:39.274Z     'x-ms-request-charge': '2'
+951 2026-03-03T13:18:39.274Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+952 2026-03-03T13:18:39.274Z     'x-ms-content-path': 'NFtxAA=='
+953 2026-03-03T13:18:39.274Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+954 2026-03-03T13:18:39.274Z     'x-ms-xp-role': '1'
+955 2026-03-03T13:18:39.274Z     'x-ms-global-Committed-lsn': '63'
+956 2026-03-03T13:18:39.274Z     'x-ms-number-of-read-regions': '0'
+957 2026-03-03T13:18:39.274Z     'x-ms-item-lsn': '1'
+958 2026-03-03T13:18:39.274Z     'x-ms-transport-request-id': '1'
+959 2026-03-03T13:18:39.274Z     'x-ms-cosmos-llsn': '63'
+960 2026-03-03T13:18:39.274Z     'x-ms-cosmos-item-llsn': '1'
+961 2026-03-03T13:18:39.274Z     'x-ms-session-token': '0:-1#63'
+962 2026-03-03T13:18:39.274Z     'x-ms-request-duration-ms': '20.935'
+963 2026-03-03T13:18:39.274Z     'x-ms-serviceversion': 'version=2.14.0.0'
+964 2026-03-03T13:18:39.274Z     'x-ms-cosmos-physical-partition-id': '0'
+965 2026-03-03T13:18:39.274Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+966 2026-03-03T13:18:39.274Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+967 2026-03-03T13:18:39.274Z     'x-ms-gatewayversion': 'version=2.14.0'
+968 2026-03-03T13:18:39.274Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+969 2026-03-03T13:18:39.275Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/docs/'
+970 2026-03-03T13:18:39.275Z Request method: 'POST'
+971 2026-03-03T13:18:39.275Z Request headers:
+972 2026-03-03T13:18:39.275Z     'Cache-Control': 'no-cache'
+973 2026-03-03T13:18:39.275Z     'x-ms-version': '2020-07-15'
+974 2026-03-03T13:18:39.275Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+975 2026-03-03T13:18:39.275Z     'x-ms-consistency-level': 'Session'
+976 2026-03-03T13:18:39.275Z     'Content-Type': 'application/query+json'
+977 2026-03-03T13:18:39.275Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+978 2026-03-03T13:18:39.275Z     'x-ms-activity-id': '805aac8c-fb7d-4764-82e7-b98e2dcd0a3b'
+979 2026-03-03T13:18:39.275Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+980 2026-03-03T13:18:39.275Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+981 2026-03-03T13:18:39.275Z     'authorization': 'REDACTED'
+982 2026-03-03T13:18:39.275Z     'Accept': 'application/json'
+983 2026-03-03T13:18:39.275Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+984 2026-03-03T13:18:39.275Z     'x-ms-cosmos-correlated-activityid': 'a38ff533-7ce7-4f27-ad77-dcfd56a3a6c6'
+985 2026-03-03T13:18:39.275Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAMI69M4='
+986 2026-03-03T13:18:39.275Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+987 2026-03-03T13:18:39.275Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+988 2026-03-03T13:18:39.275Z     'x-ms-documentdb-isquery': 'true'
+989 2026-03-03T13:18:39.275Z     'Content-Length': '96'
+990 2026-03-03T13:18:39.275Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+991 2026-03-03T13:18:39.275Z A body is sent with the request
+992 2026-03-03T13:18:39.343Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+993 2026-03-03T13:18:39.343Z Response headers:
+994 2026-03-03T13:18:39.343Z     'Cache-Control': 'no-store, no-cache'
+995 2026-03-03T13:18:39.343Z     'Pragma': 'no-cache'
+996 2026-03-03T13:18:39.343Z     'Transfer-Encoding': 'REDACTED'
+997 2026-03-03T13:18:39.343Z     'Content-Type': 'application/json'
+998 2026-03-03T13:18:39.343Z     'Server': 'Microsoft-HTTPAPI/2.0'
+999 2026-03-03T13:18:39.343Z     'Strict-Transport-Security': 'max-age=31536000'
+1000 2026-03-03T13:18:39.343Z     'x-ms-activity-id': '805aac8c-fb7d-4764-82e7-b98e2dcd0a3b'
+1001 2026-03-03T13:18:39.343Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:10.234 GMT'
+1002 2026-03-03T13:18:39.343Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+1003 2026-03-03T13:18:39.343Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=94;documentsCount=12;collectionSize=97;'
+1004 2026-03-03T13:18:39.343Z     'x-ms-schemaversion': '1.21'
+1005 2026-03-03T13:18:39.343Z     'lsn': '63'
+1006 2026-03-03T13:18:39.343Z     'x-ms-item-count': '1'
+1007 2026-03-03T13:18:39.343Z     'x-ms-request-charge': '2.82'
+1008 2026-03-03T13:18:39.343Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/WorkOrders'
+1009 2026-03-03T13:18:39.343Z     'x-ms-content-path': 'NFtxAMI69M4='
+1010 2026-03-03T13:18:39.343Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1011 2026-03-03T13:18:39.343Z     'x-ms-xp-role': '1'
+1012 2026-03-03T13:18:39.343Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":false}'
+1013 2026-03-03T13:18:39.343Z     'x-ms-global-Committed-lsn': '63'
+1014 2026-03-03T13:18:39.343Z     'x-ms-number-of-read-regions': '0'
+1015 2026-03-03T13:18:39.343Z     'x-ms-transport-request-id': '2'
+1016 2026-03-03T13:18:39.343Z     'x-ms-cosmos-llsn': '63'
+1017 2026-03-03T13:18:39.343Z     'x-ms-session-token': '0:-1#63'
+1018 2026-03-03T13:18:39.343Z     'x-ms-request-duration-ms': '21.048'
+1019 2026-03-03T13:18:39.343Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1020 2026-03-03T13:18:39.343Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+1021 2026-03-03T13:18:39.343Z     'x-ms-cosmos-physical-partition-id': '0'
+1022 2026-03-03T13:18:39.343Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1023 2026-03-03T13:18:39.343Z     'x-ms-gatewayversion': 'version=2.14.0'
+1024 2026-03-03T13:18:39.343Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1025 2026-03-03T13:18:39.345Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/PartsInventory/'
+1026 2026-03-03T13:18:39.345Z Request method: 'GET'
+1027 2026-03-03T13:18:39.345Z Request headers:
+1028 2026-03-03T13:18:39.345Z     'Cache-Control': 'no-cache'
+1029 2026-03-03T13:18:39.345Z     'x-ms-version': '2020-07-15'
+1030 2026-03-03T13:18:39.345Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+1031 2026-03-03T13:18:39.345Z     'x-ms-consistency-level': 'Session'
+1032 2026-03-03T13:18:39.345Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+1033 2026-03-03T13:18:39.345Z     'x-ms-activity-id': '22f9e53e-3f39-432c-b232-cb5a7f277987'
+1034 2026-03-03T13:18:39.345Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1035 2026-03-03T13:18:39.345Z     'authorization': 'REDACTED'
+1036 2026-03-03T13:18:39.345Z     'Accept': 'application/json'
+1037 2026-03-03T13:18:39.345Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+1038 2026-03-03T13:18:39.345Z     'x-ms-thinclient-proxy-resource-type': 'colls'
+1039 2026-03-03T13:18:39.345Z     'x-ms-thinclient-proxy-operation-type': 'Read'
+1040 2026-03-03T13:18:39.345Z     'Content-Length': '0'
+1041 2026-03-03T13:18:39.345Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+1042 2026-03-03T13:18:39.345Z No body was attached to the request
+1043 2026-03-03T13:18:39.448Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+1044 2026-03-03T13:18:39.448Z Response headers:
+1045 2026-03-03T13:18:39.448Z     'Cache-Control': 'no-store, no-cache'
+1046 2026-03-03T13:18:39.448Z     'Pragma': 'no-cache'
+1047 2026-03-03T13:18:39.448Z     'Transfer-Encoding': 'REDACTED'
+1048 2026-03-03T13:18:39.448Z     'Content-Type': 'application/json'
+1049 2026-03-03T13:18:39.448Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/PartsInventory/'
+1050 2026-03-03T13:18:39.448Z     'Server': 'Microsoft-HTTPAPI/2.0'
+1051 2026-03-03T13:18:39.448Z     'Strict-Transport-Security': 'max-age=31536000'
+1052 2026-03-03T13:18:39.448Z     'x-ms-activity-id': '22f9e53e-3f39-432c-b232-cb5a7f277987'
+1053 2026-03-03T13:18:39.448Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 09:15:12.284 GMT'
+1054 2026-03-03T13:18:39.448Z     'etag': '"00007605-0000-1500-0000-69a5c52f0000"'
+1055 2026-03-03T13:18:39.448Z     'x-ms-schemaversion': '1.21'
+1056 2026-03-03T13:18:39.448Z     'collection-partition-index': 'REDACTED'
+1057 2026-03-03T13:18:39.448Z     'collection-service-index': 'REDACTED'
+1058 2026-03-03T13:18:39.448Z     'lsn': '17'
+1059 2026-03-03T13:18:39.448Z     'x-ms-request-charge': '2'
+1060 2026-03-03T13:18:39.448Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB'
+1061 2026-03-03T13:18:39.448Z     'x-ms-content-path': 'NFtxAA=='
+1062 2026-03-03T13:18:39.448Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1063 2026-03-03T13:18:39.448Z     'x-ms-xp-role': '1'
+1064 2026-03-03T13:18:39.448Z     'x-ms-global-Committed-lsn': '17'
+1065 2026-03-03T13:18:39.448Z     'x-ms-number-of-read-regions': '0'
+1066 2026-03-03T13:18:39.448Z     'x-ms-item-lsn': '1'
+1067 2026-03-03T13:18:39.448Z     'x-ms-transport-request-id': '4'
+1068 2026-03-03T13:18:39.448Z     'x-ms-cosmos-llsn': '17'
+1069 2026-03-03T13:18:39.448Z     'x-ms-cosmos-item-llsn': '1'
+1070 2026-03-03T13:18:39.448Z     'x-ms-session-token': '0:-1#17'
+1071 2026-03-03T13:18:39.448Z     'x-ms-request-duration-ms': '20.516'
+1072 2026-03-03T13:18:39.448Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1073 2026-03-03T13:18:39.448Z     'x-ms-cosmos-physical-partition-id': '0'
+1074 2026-03-03T13:18:39.448Z     'x-ms-cosmos-max-content-length': 'REDACTED'
+1075 2026-03-03T13:18:39.448Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1076 2026-03-03T13:18:39.448Z     'x-ms-gatewayversion': 'version=2.14.0'
+1077 2026-03-03T13:18:39.448Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1078 2026-03-03T13:18:39.449Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/PartsInventory/docs/'
+1079 2026-03-03T13:18:39.449Z Request method: 'POST'
+1080 2026-03-03T13:18:39.449Z Request headers:
+1081 2026-03-03T13:18:39.449Z     'Cache-Control': 'no-cache'
+1082 2026-03-03T13:18:39.449Z     'x-ms-version': '2020-07-15'
+1083 2026-03-03T13:18:39.449Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+1084 2026-03-03T13:18:39.449Z     'x-ms-consistency-level': 'Session'
+1085 2026-03-03T13:18:39.449Z     'Content-Type': 'application/query+json'
+1086 2026-03-03T13:18:39.449Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+1087 2026-03-03T13:18:39.449Z     'x-ms-activity-id': '5c513a64-bfeb-4aae-96eb-ff4137c11b5a'
+1088 2026-03-03T13:18:39.449Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+1089 2026-03-03T13:18:39.449Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1090 2026-03-03T13:18:39.449Z     'authorization': 'REDACTED'
+1091 2026-03-03T13:18:39.449Z     'Accept': 'application/json'
+1092 2026-03-03T13:18:39.449Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+1093 2026-03-03T13:18:39.449Z     'x-ms-cosmos-correlated-activityid': '07fd4b02-95c6-434e-9601-31e41e3052cc'
+1094 2026-03-03T13:18:39.449Z     'x-ms-cosmos-intended-collection-rid': 'NFtxALAkCns='
+1095 2026-03-03T13:18:39.449Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+1096 2026-03-03T13:18:39.449Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+1097 2026-03-03T13:18:39.449Z     'x-ms-documentdb-isquery': 'true'
+1098 2026-03-03T13:18:39.449Z     'Content-Length': '142'
+1099 2026-03-03T13:18:39.449Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+1100 2026-03-03T13:18:39.449Z A body is sent with the request
+1101 2026-03-03T13:18:39.516Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+1102 2026-03-03T13:18:39.516Z Response headers:
+1103 2026-03-03T13:18:39.516Z     'Cache-Control': 'no-store, no-cache'
+1104 2026-03-03T13:18:39.516Z     'Pragma': 'no-cache'
+1105 2026-03-03T13:18:39.516Z     'Transfer-Encoding': 'REDACTED'
+1106 2026-03-03T13:18:39.516Z     'Content-Type': 'application/json'
+1107 2026-03-03T13:18:39.516Z     'Server': 'Microsoft-HTTPAPI/2.0'
+1108 2026-03-03T13:18:39.516Z     'Strict-Transport-Security': 'max-age=31536000'
+1109 2026-03-03T13:18:39.516Z     'x-ms-activity-id': '5c513a64-bfeb-4aae-96eb-ff4137c11b5a'
+1110 2026-03-03T13:18:39.516Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 09:15:12.284 GMT'
+1111 2026-03-03T13:18:39.516Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+1112 2026-03-03T13:18:39.516Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=0;documentsCount=16;collectionSize=0;'
+1113 2026-03-03T13:18:39.516Z     'x-ms-schemaversion': '1.21'
+1114 2026-03-03T13:18:39.516Z     'lsn': '17'
+1115 2026-03-03T13:18:39.516Z     'x-ms-item-count': '1'
+1116 2026-03-03T13:18:39.516Z     'x-ms-request-charge': '2.92'
+1117 2026-03-03T13:18:39.516Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/PartsInventory'
+1118 2026-03-03T13:18:39.516Z     'x-ms-content-path': 'NFtxALAkCns='
+1119 2026-03-03T13:18:39.516Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1120 2026-03-03T13:18:39.516Z     'x-ms-xp-role': '1'
+1121 2026-03-03T13:18:39.516Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":false}'
+1122 2026-03-03T13:18:39.516Z     'x-ms-global-Committed-lsn': '17'
+1123 2026-03-03T13:18:39.516Z     'x-ms-number-of-read-regions': '0'
+1124 2026-03-03T13:18:39.516Z     'x-ms-transport-request-id': '5'
+1125 2026-03-03T13:18:39.516Z     'x-ms-cosmos-llsn': '17'
+1126 2026-03-03T13:18:39.516Z     'x-ms-session-token': '0:-1#17'
+1127 2026-03-03T13:18:39.516Z     'x-ms-request-duration-ms': '21.006'
+1128 2026-03-03T13:18:39.516Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1129 2026-03-03T13:18:39.516Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+1130 2026-03-03T13:18:39.516Z     'x-ms-cosmos-physical-partition-id': '0'
+1131 2026-03-03T13:18:39.516Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1132 2026-03-03T13:18:39.516Z     'x-ms-gatewayversion': 'version=2.14.0'
+1133 2026-03-03T13:18:39.516Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1134 2026-03-03T13:18:39.517Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/PartsInventory/docs/'
+1135 2026-03-03T13:18:39.517Z Request method: 'POST'
+1136 2026-03-03T13:18:39.517Z Request headers:
+1137 2026-03-03T13:18:39.517Z     'Cache-Control': 'no-cache'
+1138 2026-03-03T13:18:39.517Z     'x-ms-version': '2020-07-15'
+1139 2026-03-03T13:18:39.517Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+1140 2026-03-03T13:18:39.517Z     'x-ms-consistency-level': 'Session'
+1141 2026-03-03T13:18:39.517Z     'Content-Type': 'application/query+json'
+1142 2026-03-03T13:18:39.517Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+1143 2026-03-03T13:18:39.517Z     'x-ms-activity-id': '43926ab5-3b48-4e7f-8487-8f8b784bdcae'
+1144 2026-03-03T13:18:39.517Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+1145 2026-03-03T13:18:39.517Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1146 2026-03-03T13:18:39.517Z     'authorization': 'REDACTED'
+1147 2026-03-03T13:18:39.517Z     'Accept': 'application/json'
+1148 2026-03-03T13:18:39.517Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+1149 2026-03-03T13:18:39.517Z     'x-ms-cosmos-correlated-activityid': '7c953166-8e38-4f93-a9a1-a4792e3100b3'
+1150 2026-03-03T13:18:39.517Z     'x-ms-cosmos-intended-collection-rid': 'NFtxALAkCns='
+1151 2026-03-03T13:18:39.517Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+1152 2026-03-03T13:18:39.517Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+1153 2026-03-03T13:18:39.517Z     'x-ms-documentdb-isquery': 'true'
+1154 2026-03-03T13:18:39.517Z     'x-ms-session-token': '0:-1#17'
+1155 2026-03-03T13:18:39.517Z     'Content-Length': '142'
+1156 2026-03-03T13:18:39.517Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+1157 2026-03-03T13:18:39.517Z A body is sent with the request
+1158 2026-03-03T13:18:39.584Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+1159 2026-03-03T13:18:39.585Z Response headers:
+1160 2026-03-03T13:18:39.585Z     'Cache-Control': 'no-store, no-cache'
+1161 2026-03-03T13:18:39.585Z     'Pragma': 'no-cache'
+1162 2026-03-03T13:18:39.585Z     'Transfer-Encoding': 'REDACTED'
+1163 2026-03-03T13:18:39.585Z     'Content-Type': 'application/json'
+1164 2026-03-03T13:18:39.585Z     'Server': 'Microsoft-HTTPAPI/2.0'
+1165 2026-03-03T13:18:39.585Z     'Strict-Transport-Security': 'max-age=31536000'
+1166 2026-03-03T13:18:39.585Z     'x-ms-activity-id': '43926ab5-3b48-4e7f-8487-8f8b784bdcae'
+1167 2026-03-03T13:18:39.585Z     'x-ms-last-state-change-utc': 'Mon, 02 Mar 2026 09:15:14.271 GMT'
+1168 2026-03-03T13:18:39.585Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+1169 2026-03-03T13:18:39.585Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=0;documentsCount=16;collectionSize=0;'
+1170 2026-03-03T13:18:39.585Z     'x-ms-schemaversion': '1.21'
+1171 2026-03-03T13:18:39.585Z     'lsn': '17'
+1172 2026-03-03T13:18:39.585Z     'x-ms-item-count': '1'
+1173 2026-03-03T13:18:39.585Z     'x-ms-request-charge': '2.92'
+1174 2026-03-03T13:18:39.585Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/PartsInventory'
+1175 2026-03-03T13:18:39.585Z     'x-ms-content-path': 'NFtxALAkCns='
+1176 2026-03-03T13:18:39.585Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1177 2026-03-03T13:18:39.585Z     'x-ms-xp-role': '1'
+1178 2026-03-03T13:18:39.585Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":false}'
+1179 2026-03-03T13:18:39.585Z     'x-ms-global-Committed-lsn': '17'
+1180 2026-03-03T13:18:39.585Z     'x-ms-number-of-read-regions': '0'
+1181 2026-03-03T13:18:39.585Z     'x-ms-transport-request-id': '3'
+1182 2026-03-03T13:18:39.585Z     'x-ms-cosmos-llsn': '17'
+1183 2026-03-03T13:18:39.585Z     'x-ms-session-token': '0:-1#17'
+1184 2026-03-03T13:18:39.585Z     'x-ms-request-duration-ms': '21.674'
+1185 2026-03-03T13:18:39.585Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1186 2026-03-03T13:18:39.585Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+1187 2026-03-03T13:18:39.585Z     'x-ms-cosmos-physical-partition-id': '0'
+1188 2026-03-03T13:18:39.585Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1189 2026-03-03T13:18:39.585Z     'x-ms-gatewayversion': 'version=2.14.0'
+1190 2026-03-03T13:18:39.585Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1191 2026-03-03T13:18:39.586Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/docs/'
+1192 2026-03-03T13:18:39.586Z Request method: 'POST'
+1193 2026-03-03T13:18:39.586Z Request headers:
+1194 2026-03-03T13:18:39.586Z     'Cache-Control': 'no-cache'
+1195 2026-03-03T13:18:39.586Z     'x-ms-version': '2020-07-15'
+1196 2026-03-03T13:18:39.586Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+1197 2026-03-03T13:18:39.586Z     'x-ms-consistency-level': 'Session'
+1198 2026-03-03T13:18:39.586Z     'Content-Type': 'application/query+json'
+1199 2026-03-03T13:18:39.586Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+1200 2026-03-03T13:18:39.586Z     'x-ms-activity-id': 'cb317cf2-9ea7-4b71-88c0-aff1c6feb115'
+1201 2026-03-03T13:18:39.586Z     'x-ms-documentdb-query-enablecrosspartition': 'True'
+1202 2026-03-03T13:18:39.586Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1203 2026-03-03T13:18:39.586Z     'authorization': 'REDACTED'
+1204 2026-03-03T13:18:39.586Z     'Accept': 'application/json'
+1205 2026-03-03T13:18:39.586Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+1206 2026-03-03T13:18:39.586Z     'x-ms-cosmos-correlated-activityid': '883b7133-3c38-4229-890f-52cdfc03df9d'
+1207 2026-03-03T13:18:39.586Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAMI69M4='
+1208 2026-03-03T13:18:39.586Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+1209 2026-03-03T13:18:39.586Z     'x-ms-thinclient-proxy-operation-type': 'SqlQuery'
+1210 2026-03-03T13:18:39.586Z     'x-ms-documentdb-isquery': 'true'
+1211 2026-03-03T13:18:39.586Z     'x-ms-session-token': '0:-1#63'
+1212 2026-03-03T13:18:39.586Z     'Content-Length': '96'
+1213 2026-03-03T13:18:39.586Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+1214 2026-03-03T13:18:39.586Z A body is sent with the request
+1215 2026-03-03T13:18:39.672Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 200
+1216 2026-03-03T13:18:39.672Z Response headers:
+1217 2026-03-03T13:18:39.672Z     'Cache-Control': 'no-store, no-cache'
+1218 2026-03-03T13:18:39.672Z     'Pragma': 'no-cache'
+1219 2026-03-03T13:18:39.672Z     'Transfer-Encoding': 'REDACTED'
+1220 2026-03-03T13:18:39.672Z     'Content-Type': 'application/json'
+1221 2026-03-03T13:18:39.672Z     'Server': 'Microsoft-HTTPAPI/2.0'
+1222 2026-03-03T13:18:39.672Z     'Strict-Transport-Security': 'max-age=31536000'
+1223 2026-03-03T13:18:39.672Z     'x-ms-activity-id': 'cb317cf2-9ea7-4b71-88c0-aff1c6feb115'
+1224 2026-03-03T13:18:39.672Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:02.890 GMT'
+1225 2026-03-03T13:18:39.672Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+1226 2026-03-03T13:18:39.672Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=102;documentsCount=12;collectionSize=105;'
+1227 2026-03-03T13:18:39.672Z     'x-ms-schemaversion': '1.21'
+1228 2026-03-03T13:18:39.672Z     'lsn': '63'
+1229 2026-03-03T13:18:39.672Z     'x-ms-item-count': '1'
+1230 2026-03-03T13:18:39.672Z     'x-ms-request-charge': '2.82'
+1231 2026-03-03T13:18:39.672Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/WorkOrders'
+1232 2026-03-03T13:18:39.672Z     'x-ms-content-path': 'NFtxAMI69M4='
+1233 2026-03-03T13:18:39.672Z     'x-ms-quorum-acked-lsn': '63'
+1234 2026-03-03T13:18:39.672Z     'x-ms-current-write-quorum': '3'
+1235 2026-03-03T13:18:39.672Z     'x-ms-current-replica-set-size': '4'
+1236 2026-03-03T13:18:39.672Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1237 2026-03-03T13:18:39.672Z     'x-ms-xp-role': '1'
+1238 2026-03-03T13:18:39.672Z     'x-ms-cosmos-query-execution-info': '{"reverseRidEnabled":false,"reverseIndexScan":false}'
+1239 2026-03-03T13:18:39.672Z     'x-ms-global-Committed-lsn': '63'
+1240 2026-03-03T13:18:39.672Z     'x-ms-number-of-read-regions': '0'
+1241 2026-03-03T13:18:39.672Z     'x-ms-transport-request-id': '1'
+1242 2026-03-03T13:18:39.672Z     'x-ms-cosmos-llsn': '63'
+1243 2026-03-03T13:18:39.672Z     'x-ms-cosmos-quorum-acked-llsn': '63'
+1244 2026-03-03T13:18:39.672Z     'x-ms-session-token': '0:-1#63'
+1245 2026-03-03T13:18:39.672Z     'x-ms-request-duration-ms': '21.29'
+1246 2026-03-03T13:18:39.672Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1247 2026-03-03T13:18:39.672Z     'x-ms-cosmos-is-partition-key-delete-pending': 'false'
+1248 2026-03-03T13:18:39.672Z     'x-ms-cosmos-physical-partition-id': '0'
+1249 2026-03-03T13:18:39.672Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1250 2026-03-03T13:18:39.672Z     'x-ms-gatewayversion': 'version=2.14.0'
+1251 2026-03-03T13:18:39.672Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1252 2026-03-03T13:18:39.673Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/docs/wo-2024-468/'
+1253 2026-03-03T13:18:39.673Z Request method: 'DELETE'
+1254 2026-03-03T13:18:39.673Z Request headers:
+1255 2026-03-03T13:18:39.673Z     'Cache-Control': 'no-cache'
+1256 2026-03-03T13:18:39.673Z     'x-ms-version': '2020-07-15'
+1257 2026-03-03T13:18:39.673Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+1258 2026-03-03T13:18:39.673Z     'x-ms-consistency-level': 'Session'
+1259 2026-03-03T13:18:39.673Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+1260 2026-03-03T13:18:39.673Z     'x-ms-activity-id': '1d984453-8f0c-4cac-8393-5f1be031fe00'
+1261 2026-03-03T13:18:39.673Z     'x-ms-documentdb-partitionkey': '["Ready"]'
+1262 2026-03-03T13:18:39.673Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1263 2026-03-03T13:18:39.673Z     'authorization': 'REDACTED'
+1264 2026-03-03T13:18:39.673Z     'Accept': 'application/json'
+1265 2026-03-03T13:18:39.673Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+1266 2026-03-03T13:18:39.673Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAMI69M4='
+1267 2026-03-03T13:18:39.673Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+1268 2026-03-03T13:18:39.673Z     'x-ms-thinclient-proxy-operation-type': 'Delete'
+1269 2026-03-03T13:18:39.673Z     'Content-Length': '0'
+1270 2026-03-03T13:18:39.673Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+1271 2026-03-03T13:18:39.673Z No body was attached to the request
+1272 2026-03-03T13:18:39.728Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 204
+1273 2026-03-03T13:18:39.728Z Response headers:
+1274 2026-03-03T13:18:39.728Z     'Cache-Control': 'no-store, no-cache'
+1275 2026-03-03T13:18:39.728Z     'Pragma': 'no-cache'
+1276 2026-03-03T13:18:39.728Z     'Content-Length': '0'
+1277 2026-03-03T13:18:39.728Z     'Content-Type': 'application/json'
+1278 2026-03-03T13:18:39.728Z     'Content-Location': 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com/dbs/FactoryOpsDB/colls/WorkOrders/docs/wo-2024-468/'
+1279 2026-03-03T13:18:39.728Z     'Server': 'Microsoft-HTTPAPI/2.0'
+1280 2026-03-03T13:18:39.728Z     'Strict-Transport-Security': 'max-age=31536000'
+1281 2026-03-03T13:18:39.728Z     'x-ms-activity-id': '1d984453-8f0c-4cac-8393-5f1be031fe00'
+1282 2026-03-03T13:18:39.728Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:02.890 GMT'
+1283 2026-03-03T13:18:39.728Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+1284 2026-03-03T13:18:39.728Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=102;documentsCount=12;collectionSize=104;'
+1285 2026-03-03T13:18:39.728Z     'x-ms-schemaversion': '1.21'
+1286 2026-03-03T13:18:39.728Z     'lsn': '64'
+1287 2026-03-03T13:18:39.728Z     'x-ms-request-charge': '11.05'
+1288 2026-03-03T13:18:39.728Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/WorkOrders'
+1289 2026-03-03T13:18:39.728Z     'x-ms-content-path': 'NFtxAMI69M4='
+1290 2026-03-03T13:18:39.728Z     'x-ms-quorum-acked-lsn': '63'
+1291 2026-03-03T13:18:39.728Z     'x-ms-current-write-quorum': '3'
+1292 2026-03-03T13:18:39.728Z     'x-ms-current-replica-set-size': '4'
+1293 2026-03-03T13:18:39.728Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1294 2026-03-03T13:18:39.728Z     'x-ms-xp-role': '1'
+1295 2026-03-03T13:18:39.728Z     'x-ms-global-Committed-lsn': '63'
+1296 2026-03-03T13:18:39.728Z     'x-ms-number-of-read-regions': '0'
+1297 2026-03-03T13:18:39.728Z     'x-ms-transport-request-id': '2'
+1298 2026-03-03T13:18:39.728Z     'x-ms-cosmos-llsn': '64'
+1299 2026-03-03T13:18:39.728Z     'x-ms-cosmos-quorum-acked-llsn': '63'
+1300 2026-03-03T13:18:39.728Z     'x-ms-session-token': '0:-1#64'
+1301 2026-03-03T13:18:39.728Z     'x-ms-request-duration-ms': '4.251'
+1302 2026-03-03T13:18:39.728Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1303 2026-03-03T13:18:39.728Z     'x-ms-cosmos-physical-partition-id': '0'
+1304 2026-03-03T13:18:39.728Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1305 2026-03-03T13:18:39.728Z     'x-ms-gatewayversion': 'version=2.14.0'
+1306 2026-03-03T13:18:39.728Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1307 2026-03-03T13:18:39.729Z INFO:azure.cosmos._cosmos_http_logging_policy:Request URL: 'https://msagthack-cosmos-2bynis23zmxny-germanywestcentral.documents.azure.com:443/dbs/FactoryOpsDB/colls/WorkOrders/docs/'
+1308 2026-03-03T13:18:39.729Z Request method: 'POST'
+1309 2026-03-03T13:18:39.729Z Request headers:
+1310 2026-03-03T13:18:39.729Z     'Cache-Control': 'no-cache'
+1311 2026-03-03T13:18:39.729Z     'x-ms-version': '2020-07-15'
+1312 2026-03-03T13:18:39.729Z     'x-ms-documentdb-query-iscontinuationexpected': 'False'
+1313 2026-03-03T13:18:39.729Z     'x-ms-consistency-level': 'Session'
+1314 2026-03-03T13:18:39.729Z     'x-ms-cosmos-sdk-supportedcapabilities': '1'
+1315 2026-03-03T13:18:39.729Z     'x-ms-activity-id': '98f4faf5-d11a-421d-a905-138929a50382'
+1316 2026-03-03T13:18:39.729Z     'x-ms-documentdb-partitionkey': '["Ready"]'
+1317 2026-03-03T13:18:39.729Z     'x-ms-date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1318 2026-03-03T13:18:39.729Z     'authorization': 'REDACTED'
+1319 2026-03-03T13:18:39.729Z     'Content-Type': 'application/json'
+1320 2026-03-03T13:18:39.729Z     'Accept': 'application/json'
+1321 2026-03-03T13:18:39.729Z     'x-ms-client-id': '153cf1ae-868e-4337-84a3-aaffd871a69b'
+1322 2026-03-03T13:18:39.729Z     'x-ms-cosmos-intended-collection-rid': 'NFtxAMI69M4='
+1323 2026-03-03T13:18:39.729Z     'x-ms-thinclient-proxy-resource-type': 'docs'
+1324 2026-03-03T13:18:39.729Z     'x-ms-thinclient-proxy-operation-type': 'Upsert'
+1325 2026-03-03T13:18:39.729Z     'x-ms-documentdb-is-upsert': 'True'
+1326 2026-03-03T13:18:39.729Z     'Content-Length': '401'
+1327 2026-03-03T13:18:39.729Z     'User-Agent': 'azsdk-python-cosmos/4.15.0b2 Python/3.13.12 (Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39)'
+1328 2026-03-03T13:18:39.729Z A body is sent with the request
+1329 2026-03-03T13:18:39.780Z INFO:azure.cosmos._cosmos_http_logging_policy:Response status: 201
+1330 2026-03-03T13:18:39.780Z Response headers:
+1331 2026-03-03T13:18:39.780Z     'Cache-Control': 'no-store, no-cache'
+1332 2026-03-03T13:18:39.780Z     'Pragma': 'no-cache'
+1333 2026-03-03T13:18:39.780Z     'Transfer-Encoding': 'REDACTED'
+1334 2026-03-03T13:18:39.780Z     'Content-Type': 'application/json'
+1335 2026-03-03T13:18:39.780Z     'Server': 'Microsoft-HTTPAPI/2.0'
+1336 2026-03-03T13:18:39.780Z     'Strict-Transport-Security': 'max-age=31536000'
+1337 2026-03-03T13:18:39.780Z     'x-ms-activity-id': '98f4faf5-d11a-421d-a905-138929a50382'
+1338 2026-03-03T13:18:39.780Z     'x-ms-last-state-change-utc': 'Wed, 25 Feb 2026 10:25:02.890 GMT'
+1339 2026-03-03T13:18:39.780Z     'etag': '"0200c771-0000-1500-0000-69a6dfaf0000"'
+1340 2026-03-03T13:18:39.780Z     'x-ms-resource-quota': 'documentSize=51200;documentsSize=52428800;documentsCount=-1;collectionSize=52428800;'
+1341 2026-03-03T13:18:39.780Z     'x-ms-resource-usage': 'documentSize=0;documentsSize=102;documentsCount=11;collectionSize=105;'
+1342 2026-03-03T13:18:39.780Z     'x-ms-schemaversion': '1.21'
+1343 2026-03-03T13:18:39.780Z     'lsn': '65'
+1344 2026-03-03T13:18:39.780Z     'x-ms-request-charge': '11.05'
+1345 2026-03-03T13:18:39.780Z     'x-ms-alt-content-path': 'dbs/FactoryOpsDB/colls/WorkOrders'
+1346 2026-03-03T13:18:39.780Z     'x-ms-content-path': 'NFtxAMI69M4='
+1347 2026-03-03T13:18:39.780Z     'x-ms-quorum-acked-lsn': '64'
+1348 2026-03-03T13:18:39.780Z     'x-ms-current-write-quorum': '3'
+1349 2026-03-03T13:18:39.780Z     'x-ms-current-replica-set-size': '4'
+1350 2026-03-03T13:18:39.780Z     'x-ms-documentdb-partitionkeyrangeid': '0'
+1351 2026-03-03T13:18:39.780Z     'x-ms-xp-role': '1'
+1352 2026-03-03T13:18:39.780Z     'x-ms-global-Committed-lsn': '64'
+1353 2026-03-03T13:18:39.780Z     'x-ms-number-of-read-regions': '0'
+1354 2026-03-03T13:18:39.780Z     'x-ms-transport-request-id': '3'
+1355 2026-03-03T13:18:39.780Z     'x-ms-cosmos-llsn': '65'
+1356 2026-03-03T13:18:39.780Z     'x-ms-cosmos-quorum-acked-llsn': '64'
+1357 2026-03-03T13:18:39.780Z     'x-ms-session-token': '0:-1#65'
+1358 2026-03-03T13:18:39.780Z     'x-ms-request-duration-ms': '4.345'
+1359 2026-03-03T13:18:39.780Z     'x-ms-serviceversion': 'version=2.14.0.0'
+1360 2026-03-03T13:18:39.780Z     'x-ms-cosmos-physical-partition-id': '0'
+1361 2026-03-03T13:18:39.780Z     'x-ms-cosmos-internal-partition-id': 'REDACTED'
+1362 2026-03-03T13:18:39.780Z     'x-ms-gatewayversion': 'version=2.14.0'
+1363 2026-03-03T13:18:39.780Z     'Date': 'Tue, 03 Mar 2026 13:18:39 GMT'
+1364 2026-03-03T13:18:39.783Z INFO:main:<<< Response: POST /parts-ordering/ - Status: 200
+1365 2026-03-03T13:18:47.198Z INFO:main:>>> Incoming request: GET /health
+1366 2026-03-03T13:18:47.199Z INFO:main:<<< Response: GET /health - Status: 200
+1367 2026-03-03T13:19:17.210Z INFO:main:>>> Incoming request: GET /health
+1368 2026-03-03T13:19:17.211Z INFO:main:<<< Response: GET /health - Status: 200
+1369 2026-03-03T13:19:47.217Z INFO:main:>>> Incoming request: GET /health
+1370 2026-03-03T13:19:47.218Z INFO:main:<<< Response: GET /health - Status: 200
+1371 2026-03-03T13:20:17.236Z INFO:main:>>> Incoming request: GET /health
+1372 2026-03-03T13:20:17.236Z INFO:main:<<< Response: GET /health - Status: 200
+1373 2026-03-03T13:20:47.245Z INFO:main:>>> Incoming request: GET /health
+1374 2026-03-03T13:20:47.246Z INFO:main:<<< Response: GET /health - Status: 200
+1375 2026-03-03T13:21:17.266Z INFO:main:>>> Incoming request: GET /health
+1376 2026-03-03T13:21:17.267Z INFO:main:<<< Response: GET /health - Status: 200
+1377 2026-03-03T13:21:47.375Z INFO:main:>>> Incoming request: GET /health
+1378 2026-03-03T13:21:47.376Z INFO:main:<<< Response: GET /health - Status: 200
+1379 2026-03-03T13:22:17.390Z INFO:main:>>> Incoming request: GET /health
+1380 2026-03-03T13:22:17.391Z INFO:main:<<< Response: GET /health - Status: 200
+1381 2026-03-03T13:22:47.403Z INFO:main:>>> Incoming request: GET /health
+1382 2026-03-03T13:22:47.404Z INFO:main:<<< Response: GET /health - Status: 200
+1383 2026-03-03T13:23:17.412Z INFO:main:>>> Incoming request: GET /health
+1384 2026-03-03T13:23:17.413Z INFO:main:<<< Response: GET /health - Status: 200
+1385 2026-03-03T13:23:47.420Z INFO:main:>>> Incoming request: GET /health
+1386 2026-03-03T13:23:47.421Z INFO:main:<<< Response: GET /health - Status: 200
+1387 2026-03-03T13:24:17.432Z INFO:main:>>> Incoming request: GET /health
+1388 2026-03-03T13:24:17.433Z INFO:main:<<< Response: GET /health - Status: 200
+1389 2026-03-03T13:24:47.441Z INFO:main:>>> Incoming request: GET /health
+1390 2026-03-03T13:24:47.442Z INFO:main:<<< Response: GET /health - Status: 200
+1391 2026-03-03T13:25:17.454Z INFO:main:>>> Incoming request: GET /health
+1392 2026-03-03T13:25:17.454Z INFO:main:<<< Response: GET /health - Status: 200
+1393 2026-03-03T13:25:47.465Z INFO:main:>>> Incoming request: GET /health
+1394 2026-03-03T13:25:47.466Z INFO:main:<<< Response: GET /health - Status: 200
+1395 2026-03-03T13:26:17.480Z INFO:main:>>> Incoming request: GET /health
+1396 2026-03-03T13:26:17.481Z INFO:main:<<< Response: GET /health - Status: 200
+1397 2026-03-03T13:26:47.586Z INFO:main:>>> Incoming request: GET /health
+1398 2026-03-03T13:26:47.586Z INFO:main:<<< Response: GET /health - Status: 200
+1399 2026-03-03T13:27:17.601Z INFO:main:>>> Incoming request: GET /health
+1400 2026-03-03T13:27:17.601Z INFO:main:<<< Response: GET /health - Status: 200
+1401 2026-03-03T13:27:47.605Z INFO:main:>>> Incoming request: GET /health
+1402 2026-03-03T13:27:47.606Z INFO:main:<<< Response: GET /health - Status: 200
+1403 2026-03-03T13:28:17.623Z INFO:main:>>> Incoming request: GET /health
+1404 2026-03-03T13:28:17.624Z INFO:main:<<< Response: GET /health - Status: 200
+1405 2026-03-03T13:28:47.635Z INFO:main:>>> Incoming request: GET /health
+1406 2026-03-03T13:28:47.635Z INFO:main:<<< Response: GET /health - Status: 200
+1407 2026-03-03T13:29:17.649Z INFO:main:>>> Incoming request: GET /health
+1408 2026-03-03T13:29:17.650Z INFO:main:<<< Response: GET /health - Status: 200
+1409 2026-03-03T13:29:47.662Z INFO:main:>>> Incoming request: GET /health
+1410 2026-03-03T13:29:47.663Z INFO:main:<<< Response: GET /health - Status: 200
+1411 2026-03-03T13:30:17.672Z INFO:main:>>> Incoming request: GET /health
+1412 2026-03-03T13:30:17.673Z INFO:main:<<< Response: GET /health - Status: 200
+1413 2026-03-03T13:30:47.687Z INFO:main:>>> Incoming request: GET /health
+1414 2026-03-03T13:30:47.688Z INFO:main:<<< Response: GET /health - Status: 200
+1415 2026-03-03T13:31:17.703Z INFO:main:>>> Incoming request: GET /health
+1416 2026-03-03T13:31:17.704Z INFO:main:<<< Response: GET /health - Status: 200
+1417 2026-03-03T13:31:47.802Z INFO:main:>>> Incoming request: GET /health
+1418 2026-03-03T13:31:47.810Z INFO:main:<<< Response: GET /health - Status: 200
+1419 2026-03-03T13:32:17.820Z INFO:main:>>> Incoming request: GET /health
+1420 2026-03-03T13:32:17.821Z INFO:main:<<< Response: GET /health - Status: 200
+1421 2026-03-03T13:32:47.835Z INFO:main:>>> Incoming request: GET /health
+1422 2026-03-03T13:32:47.835Z INFO:main:<<< Response: GET /health - Status: 200
+1423 2026-03-03T13:33:17.851Z INFO:main:>>> Incoming request: GET /health
+1424 2026-03-03T13:33:17.852Z INFO:main:<<< Response: GET /health - Status: 200
+1425 2026-03-03T13:33:47.862Z INFO:main:>>> Incoming request: GET /health
+1426 2026-03-03T13:33:47.863Z INFO:main:<<< Response: GET /health - Status: 200
+1427 2026-03-03T13:34:17.877Z INFO:main:>>> Incoming request: GET /health
+1428 2026-03-03T13:34:17.878Z INFO:main:<<< Response: GET /health - Status: 200
+1429 2026-03-03T13:34:47.893Z INFO:main:>>> Incoming request: GET /health
+1430 2026-03-03T13:34:47.894Z INFO:main:<<< Response: GET /health - Status: 200
+1431 2026-03-03T13:35:17.910Z INFO:main:>>> Incoming request: GET /health
+1432 2026-03-03T13:35:17.911Z INFO:main:<<< Response: GET /health - Status: 200
+1433 2026-03-03T13:35:47.919Z INFO:main:>>> Incoming request: GET /health
+1434 2026-03-03T13:35:47.920Z INFO:main:<<< Response: GET /health - Status: 200
+1435 2026-03-03T13:36:17.926Z INFO:main:>>> Incoming request: GET /health
+1436 2026-03-03T13:36:17.927Z INFO:main:<<< Response: GET /health - Status: 200
+1437 2026-03-03T13:36:48.036Z INFO:main:>>> Incoming request: GET /health
+1438 2026-03-03T13:36:48.036Z INFO:main:<<< Response: GET /health - Status: 200
+1439 2026-03-03T13:37:18.045Z INFO:main:>>> Incoming request: GET /health
+1440 2026-03-03T13:37:18.046Z INFO:main:<<< Response: GET /health - Status: 200
+1441 2026-03-03T13:37:48.057Z INFO:main:>>> Incoming request: GET /health
+1442 2026-03-03T13:37:48.058Z INFO:main:<<< Response: GET /health - Status: 200
+1443 2026-03-03T13:38:18.076Z INFO:main:>>> Incoming request: GET /health
+1444 2026-03-03T13:38:18.077Z INFO:main:<<< Response: GET /health - Status: 200
+1445 2026-03-03T13:38:48.089Z INFO:main:>>> Incoming request: GET /health
+1446 2026-03-03T13:38:48.090Z INFO:main:<<< Response: GET /health - Status: 200
+1447 2026-03-03T13:39:18.099Z INFO:main:>>> Incoming request: GET /health
+1448 2026-03-03T13:39:18.099Z INFO:main:<<< Response: GET /health - Status: 200
+1449 2026-03-03T13:39:48.113Z INFO:main:>>> Incoming request: GET /health
+1450 2026-03-03T13:39:48.113Z INFO:main:<<< Response: GET /health - Status: 200
+1451 2026-03-03T13:40:18.123Z INFO:main:>>> Incoming request: GET /health
+1452 2026-03-03T13:40:18.124Z INFO:main:<<< Response: GET /health - Status: 200
+1453 2026-03-03T13:40:48.136Z INFO:main:>>> Incoming request: GET /health
+1454 2026-03-03T13:40:48.137Z INFO:main:<<< Response: GET /health - Status: 200
+1455 2026-03-03T13:41:18.143Z INFO:main:>>> Incoming request: GET /health
+1456 2026-03-03T13:41:18.143Z INFO:main:<<< Response: GET /health - Status: 200
+1457 2026-03-03T13:41:48.244Z INFO:main:>>> Incoming request: GET /health
+1458 2026-03-03T13:41:48.244Z INFO:main:<<< Response: GET /health - Status: 200
+1459 2026-03-03T13:42:18.253Z INFO:main:>>> Incoming request: GET /health
+1460 2026-03-03T13:42:18.254Z INFO:main:<<< Response: GET /health - Status: 200
+1461 2026-03-03T13:42:48.269Z INFO:main:>>> Incoming request: GET /health
+1462 2026-03-03T13:42:48.270Z INFO:main:<<< Response: GET /health - Status: 200
+1463 2026-03-03T13:43:18.282Z INFO:main:>>> Incoming request: GET /health
+1464 2026-03-03T13:43:18.282Z INFO:main:<<< Response: GET /health - Status: 200
+1465 2026-03-03T13:43:48.292Z INFO:main:>>> Incoming request: GET /health
+1466 2026-03-03T13:43:48.293Z INFO:main:<<< Response: GET /health - Status: 200
+1467 2026-03-03T13:44:18.304Z INFO:main:>>> Incoming request: GET /health
+1468 2026-03-03T13:44:18.304Z INFO:main:<<< Response: GET /health - Status: 200
+1469 2026-03-03T13:44:48.308Z INFO:main:>>> Incoming request: GET /health
+1470 2026-03-03T13:44:48.309Z INFO:main:<<< Response: GET /health - Status: 200
+1471 2026-03-03T13:45:18.320Z INFO:main:>>> Incoming request: GET /health
+1472 2026-03-03T13:45:18.321Z INFO:main:<<< Response: GET /health - Status: 200
+1473 2026-03-03T13:45:48.329Z INFO:main:>>> Incoming request: GET /health
+1474 2026-03-03T13:45:48.330Z INFO:main:<<< Response: GET /health - Status: 200
+1475 2026-03-03T13:46:18.344Z INFO:main:>>> Incoming request: GET /health
+1476 2026-03-03T13:46:18.345Z INFO:main:<<< Response: GET /health - Status: 200
+1477 2026-03-03T13:46:48.451Z INFO:main:>>> Incoming request: GET /health
+1478 2026-03-03T13:46:48.451Z INFO:main:<<< Response: GET /health - Status: 200
+1479 2026-03-03T13:47:18.462Z INFO:main:>>> Incoming request: GET /health
+1480 2026-03-03T13:47:18.463Z INFO:main:<<< Response: GET /health - Status: 200
+1481 2026-03-03T13:47:48.479Z INFO:main:>>> Incoming request: GET /health
+1482 2026-03-03T13:47:48.480Z INFO:main:<<< Response: GET /health - Status: 200
+1483 2026-03-03T13:48:18.490Z INFO:main:>>> Incoming request: GET /health
+1484 2026-03-03T13:48:18.491Z INFO:main:<<< Response: GET /health - Status: 200
+1485 2026-03-03T13:48:48.504Z INFO:main:>>> Incoming request: GET /health
+1486 2026-03-03T13:48:48.505Z INFO:main:<<< Response: GET /health - Status: 200
+1487 2026-03-03T13:49:18.512Z INFO:main:>>> Incoming request: GET /health
+1488 2026-03-03T13:49:18.513Z INFO:main:<<< Response: GET /health - Status: 200
+1489 2026-03-03T13:49:48.521Z INFO:main:>>> Incoming request: GET /health
+1490 2026-03-03T13:49:48.523Z INFO:main:<<< Response: GET /health - Status: 200
+1491 2026-03-03T13:50:18.528Z INFO:main:>>> Incoming request: GET /health
+1492 2026-03-03T13:50:18.528Z INFO:main:<<< Response: GET /health - Status: 200
+1493 2026-03-03T13:50:48.533Z INFO:main:>>> Incoming request: GET /health
+1494 2026-03-03T13:50:48.533Z INFO:main:<<< Response: GET /health - Status: 200
+1495 2026-03-03T13:51:18.536Z INFO:main:>>> Incoming request: GET /health
+1496 2026-03-03T13:51:18.536Z INFO:main:<<< Response: GET /health - Status: 200
+1497 2026-03-03T13:51:48.573Z INFO:main:>>> Incoming request: GET /health
+1498 2026-03-03T13:51:48.573Z INFO:main:<<< Response: GET /health - Status: 200
+1499 2026-03-03T13:52:18.574Z INFO:main:>>> Incoming request: GET /health
+1500 2026-03-03T13:52:18.575Z INFO:main:<<< Response: GET /health - Status: 200
+1501 2026-03-03T13:52:48.585Z INFO:main:>>> Incoming request: GET /health
+1502 2026-03-03T13:52:48.585Z INFO:main:<<< Response: GET /health - Status: 200
+1503 2026-03-03T13:53:18.593Z INFO:main:>>> Incoming request: GET /health
+1504 2026-03-03T13:53:18.594Z INFO:main:<<< Response: GET /health - Status: 200
+1505 2026-03-03T13:53:48.597Z INFO:main:>>> Incoming request: GET /health
+1506 2026-03-03T13:53:48.597Z INFO:main:<<< Response: GET /health - Status: 200
+1507 2026-03-03T13:54:18.605Z INFO:main:>>> Incoming request: GET /health
+1508 2026-03-03T13:54:18.609Z INFO:main:<<< Response: GET /health - Status: 200
+1509 2026-03-03T13:54:48.617Z INFO:main:>>> Incoming request: GET /health
+1510 2026-03-03T13:54:48.617Z INFO:main:<<< Response: GET /health - Status: 200
+1511 2026-03-03T13:55:18.626Z INFO:main:>>> Incoming request: GET /health
+1512 2026-03-03T13:55:18.626Z INFO:main:<<< Response: GET /health - Status: 200
+1513 2026-03-03T13:55:48.632Z INFO:main:>>> Incoming request: GET /health
+1514 2026-03-03T13:55:48.633Z INFO:main:<<< Response: GET /health - Status: 200
+1515 2026-03-03T13:56:18.638Z INFO:main:>>> Incoming request: GET /health
+1516 2026-03-03T13:56:18.638Z INFO:main:<<< Response: GET /health - Status: 200
+1517 2026-03-03T13:56:48.678Z INFO:main:>>> Incoming request: GET /health
+1518 2026-03-03T13:56:48.678Z INFO:main:<<< Response: GET /health - Status: 200
+1519 2026-03-03T13:57:18.685Z INFO:main:>>> Incoming request: GET /health
+1520 2026-03-03T13:57:18.685Z INFO:main:<<< Response: GET /health - Status: 200
+1521 2026-03-03T13:57:48.691Z INFO:main:>>> Incoming request: GET /health
+1522 2026-03-03T13:57:48.691Z INFO:main:<<< Response: GET /health - Status: 200
+1523 2026-03-03T13:58:18.698Z INFO:main:>>> Incoming request: GET /health
+1524 2026-03-03T13:58:18.699Z INFO:main:<<< Response: GET /health - Status: 200
+1525 2026-03-03T13:58:48.704Z INFO:main:>>> Incoming request: GET /health
+1526 2026-03-03T13:58:48.704Z INFO:main:<<< Response: GET /health - Status: 200
+1527 2026-03-03T13:59:18.710Z INFO:main:>>> Incoming request: GET /health
+1528 2026-03-03T13:59:18.710Z INFO:main:<<< Response: GET /health - Status: 200
+1529 2026-03-03T13:59:48.715Z INFO:main:>>> Incoming request: GET /health
+1530 2026-03-03T13:59:48.715Z INFO:main:<<< Response: GET /health - Status: 200
+1531 2026-03-03T14:00:18.719Z INFO:main:>>> Incoming request: GET /health
+1532 2026-03-03T14:00:18.719Z INFO:main:<<< Response: GET /health - Status: 200
+1533 2026-03-03T14:00:48.726Z INFO:main:>>> Incoming request: GET /health
+1534 2026-03-03T14:00:48.726Z INFO:main:<<< Response: GET /health - Status: 200
+1535 2026-03-03T14:01:18.732Z INFO:main:>>> Incoming request: GET /health
+1536 2026-03-03T14:01:18.732Z INFO:main:<<< Response: GET /health - Status: 200
+1537 2026-03-03T14:01:48.772Z INFO:main:>>> Incoming request: GET /health
+1538 2026-03-03T14:01:48.772Z INFO:main:<<< Response: GET /health - Status: 200
+1539 2026-03-03T14:02:18.779Z INFO:main:>>> Incoming request: GET /health
+1540 2026-03-03T14:02:18.779Z INFO:main:<<< Response: GET /health - Status: 200
+1541 2026-03-03T14:02:48.784Z INFO:main:>>> Incoming request: GET /health
+1542 2026-03-03T14:02:48.784Z INFO:main:<<< Response: GET /health - Status: 200
+1543 2026-03-03T14:03:18.790Z INFO:main:>>> Incoming request: GET /health
+1544 2026-03-03T14:03:18.791Z INFO:main:<<< Response: GET /health - Status: 200
+1545 2026-03-03T14:03:48.797Z INFO:main:>>> Incoming request: GET /health
+1546 2026-03-03T14:03:48.798Z INFO:main:<<< Response: GET /health - Status: 200
+1547 2026-03-03T14:04:18.807Z INFO:main:>>> Incoming request: GET /health
+1548 2026-03-03T14:04:18.808Z INFO:main:<<< Response: GET /health - Status: 200
+1549 2026-03-03T14:04:48.814Z INFO:main:>>> Incoming request: GET /health
+1550 2026-03-03T14:04:48.814Z INFO:main:<<< Response: GET /health - Status: 200
+1551 2026-03-03T14:05:18.820Z INFO:main:>>> Incoming request: GET /health
+1552 2026-03-03T14:05:18.820Z INFO:main:<<< Response: GET /health - Status: 200
+1553 2026-03-03T14:05:48.823Z INFO:main:>>> Incoming request: GET /health
+1554 2026-03-03T14:05:48.823Z INFO:main:<<< Response: GET /health - Status: 200
+1555 2026-03-03T14:06:18.826Z INFO:main:>>> Incoming request: GET /health
+1556 2026-03-03T14:06:18.827Z INFO:main:<<< Response: GET /health - Status: 200
+1557 2026-03-03T14:06:48.860Z INFO:main:>>> Incoming request: GET /health
+1558 2026-03-03T14:06:48.860Z INFO:main:<<< Response: GET /health - Status: 200
+1559 2026-03-03T14:07:18.866Z INFO:main:>>> Incoming request: GET /health
+1560 2026-03-03T14:07:18.867Z INFO:main:<<< Response: GET /health - Status: 200
+1561 2026-03-03T14:07:48.869Z INFO:main:>>> Incoming request: GET /health
+1562 2026-03-03T14:07:48.870Z INFO:main:<<< Response: GET /health - Status: 200
+1563 2026-03-03T14:08:18.874Z INFO:main:>>> Incoming request: GET /health
+1564 2026-03-03T14:08:18.874Z INFO:main:<<< Response: GET /health - Status: 200
+1565 2026-03-03T14:08:48.886Z INFO:main:>>> Incoming request: GET /health
+1566 2026-03-03T14:08:48.886Z INFO:main:<<< Response: GET /health - Status: 200
+1567 2026-03-03T14:09:18.896Z INFO:main:>>> Incoming request: GET /health
+1568 2026-03-03T14:09:18.896Z INFO:main:<<< Response: GET /health - Status: 200
+1569 2026-03-03T14:09:48.899Z INFO:main:>>> Incoming request: GET /health
+1570 2026-03-03T14:09:48.899Z INFO:main:<<< Response: GET /health - Status: 200
+1571 2026-03-03T14:10:18.905Z INFO:main:>>> Incoming request: GET /health
+1572 2026-03-03T14:10:18.905Z INFO:main:<<< Response: GET /health - Status: 200
+1573 2026-03-03T14:10:48.908Z INFO:main:>>> Incoming request: GET /health
+1574 2026-03-03T14:10:48.909Z INFO:main:<<< Response: GET /health - Status: 200
+1575 2026-03-03T14:11:18.913Z INFO:main:>>> Incoming request: GET /health
+1576 2026-03-03T14:11:18.914Z INFO:main:<<< Response: GET /health - Status: 200
+1577 2026-03-03T14:11:48.962Z INFO:main:>>> Incoming request: GET /health
+1578 2026-03-03T14:11:48.962Z INFO:main:<<< Response: GET /health - Status: 200
+1579 2026-03-03T14:12:18.971Z INFO:main:>>> Incoming request: GET /health
+1580 2026-03-03T14:12:18.971Z INFO:main:<<< Response: GET /health - Status: 200
+1581 2026-03-03T14:12:48.975Z INFO:main:>>> Incoming request: GET /health
+1582 2026-03-03T14:12:48.975Z INFO:main:<<< Response: GET /health - Status: 200
+1583 2026-03-03T14:13:18.983Z INFO:main:>>> Incoming request: GET /health
+1584 2026-03-03T14:13:18.983Z INFO:main:<<< Response: GET /health - Status: 200
+1585 2026-03-03T14:13:48.995Z INFO:main:>>> Incoming request: GET /health
+1586 2026-03-03T14:13:48.995Z INFO:main:<<< Response: GET /health - Status: 200
+1587 2026-03-03T14:14:19.006Z INFO:main:>>> Incoming request: GET /health
+1588 2026-03-03T14:14:19.007Z INFO:main:<<< Response: GET /health - Status: 200
+1589 2026-03-03T14:14:49.021Z INFO:main:>>> Incoming request: GET /health
+1590 2026-03-03T14:14:49.022Z INFO:main:<<< Response: GET /health - Status: 200
+1591 2026-03-03T14:15:19.028Z INFO:main:>>> Incoming request: GET /health
+1592 2026-03-03T14:15:19.028Z INFO:main:<<< Response: GET /health - Status: 200
+1593 2026-03-03T14:15:49.037Z INFO:main:>>> Incoming request: GET /health
+1594 2026-03-03T14:15:49.038Z INFO:main:<<< Response: GET /health - Status: 200
+1595 2026-03-03T14:16:19.048Z INFO:main:>>> Incoming request: GET /health
+1596 2026-03-03T14:16:19.049Z INFO:main:<<< Response: GET /health - Status: 200
+1597 2026-03-03T14:16:49.145Z INFO:main:>>> Incoming request: GET /health
+1598 2026-03-03T14:16:49.145Z INFO:main:<<< Response: GET /health - Status: 200
+1599 2026-03-03T14:17:19.158Z INFO:main:>>> Incoming request: GET /health
+1600 2026-03-03T14:17:19.159Z INFO:main:<<< Response: GET /health - Status: 200
+1601 2026-03-03T14:17:49.165Z INFO:main:>>> Incoming request: GET /health
+1602 2026-03-03T14:17:49.166Z INFO:main:<<< Response: GET /health - Status: 200
+1603 2026-03-03T14:18:19.175Z INFO:main:>>> Incoming request: GET /health
+1604 2026-03-03T14:18:19.176Z INFO:main:<<< Response: GET /health - Status: 200
+1605 2026-03-03T14:18:49.190Z INFO:main:>>> Incoming request: GET /health
+1606 2026-03-03T14:18:49.191Z INFO:main:<<< Response: GET /health - Status: 200
+1607 2026-03-03T14:19:19.200Z INFO:main:>>> Incoming request: GET /health
+1608 2026-03-03T14:19:19.201Z INFO:main:<<< Response: GET /health - Status: 200
+1609 2026-03-03T14:19:49.210Z INFO:main:>>> Incoming request: GET /health
+1610 2026-03-03T14:19:49.211Z INFO:main:<<< Response: GET /health - Status: 200
+1611 2026-03-03T14:20:19.224Z INFO:main:>>> Incoming request: GET /health
+1612 2026-03-03T14:20:19.224Z INFO:main:<<< Response: GET /health - Status: 200
+1613 2026-03-03T14:20:49.233Z INFO:main:>>> Incoming request: GET /health
+1614 2026-03-03T14:20:49.233Z INFO:main:<<< Response: GET /health - Status: 200
+1615 2026-03-03T14:21:19.247Z INFO:main:>>> Incoming request: GET /health
+1616 2026-03-03T14:21:19.248Z INFO:main:<<< Response: GET /health - Status: 200
+1617 2026-03-03T14:21:49.333Z INFO:main:>>> Incoming request: GET /health
+1618 2026-03-03T14:21:49.334Z INFO:main:<<< Response: GET /health - Status: 200
+1619 2026-03-03T14:22:19.343Z INFO:main:>>> Incoming request: GET /health
+1620 2026-03-03T14:22:19.343Z INFO:main:<<< Response: GET /health - Status: 200
+1621 2026-03-03T14:22:49.350Z INFO:main:>>> Incoming request: GET /health
+1622 2026-03-03T14:22:49.350Z INFO:main:<<< Response: GET /health - Status: 200
+1623 2026-03-03T14:23:19.367Z INFO:main:>>> Incoming request: GET /health
+1624 2026-03-03T14:23:19.368Z INFO:main:<<< Response: GET /health - Status: 200
+1625 2026-03-03T14:23:49.373Z INFO:main:>>> Incoming request: GET /health
+1626 2026-03-03T14:23:49.373Z INFO:main:<<< Response: GET /health - Status: 200
+1627 2026-03-03T14:24:19.381Z INFO:main:>>> Incoming request: GET /health
+1628 2026-03-03T14:24:19.381Z INFO:main:<<< Response: GET /health - Status: 200
+1629 2026-03-03T14:24:49.403Z INFO:main:>>> Incoming request: GET /health
+1630 2026-03-03T14:24:49.405Z INFO:main:<<< Response: GET /health - Status: 200
+1631 2026-03-03T14:25:19.406Z INFO:main:>>> Incoming request: GET /health
+1632 2026-03-03T14:25:19.407Z INFO:main:<<< Response: GET /health - Status: 200
+1633 2026-03-03T14:25:49.417Z INFO:main:>>> Incoming request: GET /health
+1634 2026-03-03T14:25:49.418Z INFO:main:<<< Response: GET /health - Status: 200
+1635 2026-03-03T14:26:19.428Z INFO:main:>>> Incoming request: GET /health
+1636 2026-03-03T14:26:19.428Z INFO:main:<<< Response: GET /health - Status: 200
+1637 2026-03-03T14:26:49.527Z INFO:main:>>> Incoming request: GET /health
+1638 2026-03-03T14:26:49.527Z INFO:main:<<< Response: GET /health - Status: 200
+1639 2026-03-03T14:27:19.536Z INFO:main:>>> Incoming request: GET /health
+1640 2026-03-03T14:27:19.536Z INFO:main:<<< Response: GET /health - Status: 200
+1641 2026-03-03T14:27:49.546Z INFO:main:>>> Incoming request: GET /health
+1642 2026-03-03T14:27:49.547Z INFO:main:<<< Response: GET /health - Status: 200
+1643 2026-03-03T14:28:19.555Z INFO:main:>>> Incoming request: GET /health
+1644 2026-03-03T14:28:19.555Z INFO:main:<<< Response: GET /health - Status: 200
+1645 2026-03-03T14:28:49.583Z INFO:main:>>> Incoming request: GET /health
+1646 2026-03-03T14:28:49.584Z INFO:main:<<< Response: GET /health - Status: 200
+1647 2026-03-03T14:29:19.593Z INFO:main:>>> Incoming request: GET /health
+1648 2026-03-03T14:29:19.594Z INFO:main:<<< Response: GET /health - Status: 200
+1649 2026-03-03T14:29:49.609Z INFO:main:>>> Incoming request: GET /health
+1650 2026-03-03T14:29:49.609Z INFO:main:<<< Response: GET /health - Status: 200
+1651 2026-03-03T14:30:19.618Z INFO:main:>>> Incoming request: GET /health
+1652 2026-03-03T14:30:19.619Z INFO:main:<<< Response: GET /health - Status: 200
+1653 2026-03-03T14:30:49.626Z INFO:main:>>> Incoming request: GET /health
+1654 2026-03-03T14:30:49.627Z INFO:main:<<< Response: GET /health - Status: 200
+1655 2026-03-03T14:31:19.643Z INFO:main:>>> Incoming request: GET /health
+1656 2026-03-03T14:31:19.645Z INFO:main:<<< Response: GET /health - Status: 200
+1657 2026-03-03T14:31:49.745Z INFO:main:>>> Incoming request: GET /health
+1658 2026-03-03T14:31:49.746Z INFO:main:<<< Response: GET /health - Status: 200
+1659 2026-03-03T14:32:19.754Z INFO:main:>>> Incoming request: GET /health
+1660 2026-03-03T14:32:19.755Z INFO:main:<<< Response: GET /health - Status: 200
+1661 2026-03-03T14:32:49.763Z INFO:main:>>> Incoming request: GET /health
+1662 2026-03-03T14:32:49.763Z INFO:main:<<< Response: GET /health - Status: 200
+1663 2026-03-03T14:33:19.777Z INFO:main:>>> Incoming request: GET /health
+1664 2026-03-03T14:33:19.778Z INFO:main:<<< Response: GET /health - Status: 200
+1665 2026-03-03T14:33:49.787Z INFO:main:>>> Incoming request: GET /health
+1666 2026-03-03T14:33:49.788Z INFO:main:<<< Response: GET /health - Status: 200
+1667 2026-03-03T14:34:19.795Z INFO:main:>>> Incoming request: GET /health
+1668 2026-03-03T14:34:19.796Z INFO:main:<<< Response: GET /health - Status: 200
+1669 2026-03-03T20:41:56.843Z INFO:main:>>> Incoming request: GET /health
+1670 2026-03-03T20:41:56.844Z INFO:main:<<< Response: GET /health - Status: 200
+1671 2026-03-03T20:42:27.424Z INFO:main:>>> Incoming request: GET /health
+1672 2026-03-03T20:42:27.425Z INFO:main:<<< Response: GET /health - Status: 200
+1673 2026-03-03T20:42:57.435Z INFO:main:>>> Incoming request: GET /health
+1674 2026-03-03T20:42:57.435Z INFO:main:<<< Response: GET /health - Status: 200
+1675 2026-03-03T20:43:28.270Z INFO:main:>>> Incoming request: GET /health
+1676 2026-03-03T20:43:28.272Z INFO:main:<<< Response: GET /health - Status: 200
+1677 2026-03-03T20:43:59.160Z INFO:main:>>> Incoming request: GET /health
+1678 2026-03-03T20:43:59.161Z INFO:main:<<< Response: GET /health - Status: 200
+1679 2026-03-03T20:44:29.710Z INFO:main:>>> Incoming request: GET /health
+1680 2026-03-03T20:44:29.717Z INFO:main:<<< Response: GET /health - Status: 200
+1681 2026-03-03T20:45:00.658Z INFO:main:>>> Incoming request: GET /health
+1682 2026-03-03T20:45:00.662Z INFO:main:<<< Response: GET /health - Status: 200
+1683 2026-03-03T20:45:31.384Z INFO:main:>>> Incoming request: GET /health
+1684 2026-03-03T20:45:31.386Z INFO:main:<<< Response: GET /health - Status: 200
+1685 2026-03-03T20:46:01.410Z INFO:main:>>> Incoming request: GET /health
+1686 2026-03-03T20:46:01.411Z INFO:main:<<< Response: GET /health - Status: 200
+1687 2026-03-03T20:46:32.133Z INFO:main:>>> Incoming request: GET /health
+1688 2026-03-03T20:46:32.134Z INFO:main:<<< Response: GET /health - Status: 200
+1689 2026-03-03T20:47:03.142Z INFO:main:>>> Incoming request: GET /health
+1690 2026-03-03T20:47:03.143Z INFO:main:<<< Response: GET /health - Status: 200
+1691 2026-03-03T20:47:34.027Z INFO:main:>>> Incoming request: GET /health
+1692 2026-03-03T20:47:34.029Z INFO:main:<<< Response: GET /health - Status: 200

@@ -1,0 +1,1 @@
+2026-03-03T14:16:43.343+0100	info	dcpctrl.ServiceReconciler	Service aspire-dashboard-http is now in state Ready	{"Service": "/aspire-dashboard-http", "Reconciliation": 30}

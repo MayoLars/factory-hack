@@ -1,0 +1,1 @@
+2026-03-03T14:16:43.354+0100	info	dcpctrl.ServiceReconciler	Service aspire-dashboard-mcp is now in state Ready	{"Service": "/aspire-dashboard-mcp", "Reconciliation": 36}
